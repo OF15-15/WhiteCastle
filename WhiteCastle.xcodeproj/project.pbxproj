@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		545BBC3A2C61652D00B8FB80 /* WhiteCastleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */; };
+		545BBC3C2C61652D00B8FB80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC3B2C61652D00B8FB80 /* ContentView.swift */; };
+		545BBC3E2C61652E00B8FB80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545BBC3D2C61652E00B8FB80 /* Assets.xcassets */; };
+		545BBC412C61652E00B8FB80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545BBC402C61652E00B8FB80 /* Preview Assets.xcassets */; };
+		545BBC4B2C61652E00B8FB80 /* WhiteCastleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */; };
+		545BBC552C61652E00B8FB80 /* WhiteCastleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC542C61652E00B8FB80 /* WhiteCastleUITests.swift */; };
+		545BBC572C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC562C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		545BBC472C61652E00B8FB80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 545BBC2E2C61652D00B8FB80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 545BBC352C61652D00B8FB80;
+			remoteInfo = WhiteCastle;
+		};
+		545BBC512C61652E00B8FB80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 545BBC2E2C61652D00B8FB80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 545BBC352C61652D00B8FB80;
+			remoteInfo = WhiteCastle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		545BBC362C61652D00B8FB80 /* WhiteCastle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiteCastle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleApp.swift; sourceTree = "<group>"; };
+		545BBC3B2C61652D00B8FB80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		545BBC3D2C61652E00B8FB80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		545BBC402C61652E00B8FB80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		545BBC462C61652E00B8FB80 /* WhiteCastleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiteCastleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleTests.swift; sourceTree = "<group>"; };
+		545BBC502C61652E00B8FB80 /* WhiteCastleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiteCastleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		545BBC542C61652E00B8FB80 /* WhiteCastleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleUITests.swift; sourceTree = "<group>"; };
+		545BBC562C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		545BBC332C61652D00B8FB80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545BBC432C61652E00B8FB80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545BBC4D2C61652E00B8FB80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		545BBC2D2C61652D00B8FB80 = {
+			isa = PBXGroup;
+			children = (
+				545BBC382C61652D00B8FB80 /* WhiteCastle */,
+				545BBC492C61652E00B8FB80 /* WhiteCastleTests */,
+				545BBC532C61652E00B8FB80 /* WhiteCastleUITests */,
+				545BBC372C61652D00B8FB80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		545BBC372C61652D00B8FB80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				545BBC362C61652D00B8FB80 /* WhiteCastle.app */,
+				545BBC462C61652E00B8FB80 /* WhiteCastleTests.xctest */,
+				545BBC502C61652E00B8FB80 /* WhiteCastleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		545BBC382C61652D00B8FB80 /* WhiteCastle */ = {
+			isa = PBXGroup;
+			children = (
+				545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */,
+				545BBC3B2C61652D00B8FB80 /* ContentView.swift */,
+				545BBC3D2C61652E00B8FB80 /* Assets.xcassets */,
+				545BBC3F2C61652E00B8FB80 /* Preview Content */,
+			);
+			path = WhiteCastle;
+			sourceTree = "<group>";
+		};
+		545BBC3F2C61652E00B8FB80 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				545BBC402C61652E00B8FB80 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		545BBC492C61652E00B8FB80 /* WhiteCastleTests */ = {
+			isa = PBXGroup;
+			children = (
+				545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */,
+			);
+			path = WhiteCastleTests;
+			sourceTree = "<group>";
+		};
+		545BBC532C61652E00B8FB80 /* WhiteCastleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				545BBC542C61652E00B8FB80 /* WhiteCastleUITests.swift */,
+				545BBC562C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift */,
+			);
+			path = WhiteCastleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		545BBC352C61652D00B8FB80 /* WhiteCastle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 545BBC5A2C61652E00B8FB80 /* Build configuration list for PBXNativeTarget "WhiteCastle" */;
+			buildPhases = (
+				545BBC322C61652D00B8FB80 /* Sources */,
+				545BBC332C61652D00B8FB80 /* Frameworks */,
+				545BBC342C61652D00B8FB80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhiteCastle;
+			productName = WhiteCastle;
+			productReference = 545BBC362C61652D00B8FB80 /* WhiteCastle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		545BBC452C61652E00B8FB80 /* WhiteCastleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 545BBC5D2C61652E00B8FB80 /* Build configuration list for PBXNativeTarget "WhiteCastleTests" */;
+			buildPhases = (
+				545BBC422C61652E00B8FB80 /* Sources */,
+				545BBC432C61652E00B8FB80 /* Frameworks */,
+				545BBC442C61652E00B8FB80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				545BBC482C61652E00B8FB80 /* PBXTargetDependency */,
+			);
+			name = WhiteCastleTests;
+			productName = WhiteCastleTests;
+			productReference = 545BBC462C61652E00B8FB80 /* WhiteCastleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		545BBC4F2C61652E00B8FB80 /* WhiteCastleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 545BBC602C61652E00B8FB80 /* Build configuration list for PBXNativeTarget "WhiteCastleUITests" */;
+			buildPhases = (
+				545BBC4C2C61652E00B8FB80 /* Sources */,
+				545BBC4D2C61652E00B8FB80 /* Frameworks */,
+				545BBC4E2C61652E00B8FB80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				545BBC522C61652E00B8FB80 /* PBXTargetDependency */,
+			);
+			name = WhiteCastleUITests;
+			productName = WhiteCastleUITests;
+			productReference = 545BBC502C61652E00B8FB80 /* WhiteCastleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		545BBC2E2C61652D00B8FB80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					545BBC352C61652D00B8FB80 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					545BBC452C61652E00B8FB80 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 545BBC352C61652D00B8FB80;
+					};
+					545BBC4F2C61652E00B8FB80 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 545BBC352C61652D00B8FB80;
+					};
+				};
+			};
+			buildConfigurationList = 545BBC312C61652D00B8FB80 /* Build configuration list for PBXProject "WhiteCastle" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 545BBC2D2C61652D00B8FB80;
+			productRefGroup = 545BBC372C61652D00B8FB80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				545BBC352C61652D00B8FB80 /* WhiteCastle */,
+				545BBC452C61652E00B8FB80 /* WhiteCastleTests */,
+				545BBC4F2C61652E00B8FB80 /* WhiteCastleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		545BBC342C61652D00B8FB80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545BBC412C61652E00B8FB80 /* Preview Assets.xcassets in Resources */,
+				545BBC3E2C61652E00B8FB80 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545BBC442C61652E00B8FB80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545BBC4E2C61652E00B8FB80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		545BBC322C61652D00B8FB80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545BBC3C2C61652D00B8FB80 /* ContentView.swift in Sources */,
+				545BBC3A2C61652D00B8FB80 /* WhiteCastleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545BBC422C61652E00B8FB80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545BBC4B2C61652E00B8FB80 /* WhiteCastleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545BBC4C2C61652E00B8FB80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545BBC572C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift in Sources */,
+				545BBC552C61652E00B8FB80 /* WhiteCastleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		545BBC482C61652E00B8FB80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 545BBC352C61652D00B8FB80 /* WhiteCastle */;
+			targetProxy = 545BBC472C61652E00B8FB80 /* PBXContainerItemProxy */;
+		};
+		545BBC522C61652E00B8FB80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 545BBC352C61652D00B8FB80 /* WhiteCastle */;
+			targetProxy = 545BBC512C61652E00B8FB80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		545BBC582C61652E00B8FB80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		545BBC592C61652E00B8FB80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		545BBC5B2C61652E00B8FB80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WhiteCastle/Preview Content\"";
+				DEVELOPMENT_TEAM = RGL533485C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ofleck.WhiteCastle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		545BBC5C2C61652E00B8FB80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WhiteCastle/Preview Content\"";
+				DEVELOPMENT_TEAM = RGL533485C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ofleck.WhiteCastle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		545BBC5E2C61652E00B8FB80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RGL533485C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ofleck.WhiteCastleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhiteCastle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhiteCastle";
+			};
+			name = Debug;
+		};
+		545BBC5F2C61652E00B8FB80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RGL533485C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ofleck.WhiteCastleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhiteCastle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhiteCastle";
+			};
+			name = Release;
+		};
+		545BBC612C61652E00B8FB80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RGL533485C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ofleck.WhiteCastleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WhiteCastle;
+			};
+			name = Debug;
+		};
+		545BBC622C61652E00B8FB80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RGL533485C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ofleck.WhiteCastleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WhiteCastle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		545BBC312C61652D00B8FB80 /* Build configuration list for PBXProject "WhiteCastle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545BBC582C61652E00B8FB80 /* Debug */,
+				545BBC592C61652E00B8FB80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		545BBC5A2C61652E00B8FB80 /* Build configuration list for PBXNativeTarget "WhiteCastle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545BBC5B2C61652E00B8FB80 /* Debug */,
+				545BBC5C2C61652E00B8FB80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		545BBC5D2C61652E00B8FB80 /* Build configuration list for PBXNativeTarget "WhiteCastleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545BBC5E2C61652E00B8FB80 /* Debug */,
+				545BBC5F2C61652E00B8FB80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		545BBC602C61652E00B8FB80 /* Build configuration list for PBXNativeTarget "WhiteCastleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545BBC612C61652E00B8FB80 /* Debug */,
+				545BBC622C61652E00B8FB80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 545BBC2E2C61652D00B8FB80 /* Project object */;
+}
