@@ -7,6 +7,7 @@ I qualified for the board game competition [europe masters](https://europemaster
 
 ## The White Castle
 The White Castle is a competitive, moderatly complex board game by Shei S. & Isra C., published by Devir Games. You can find the rules [here](https://dmmib.de/download/12604/?tmstv=1722888475)
+The different components can be found here: https://devir.world/thewhitecastle/components_ENG.html
 
 ## Disclaimer
 This project is not associated or endorsed with Devir Games, Europe Masters or any other company involved
