@@ -10,3 +10,9 @@ enum DColor {
     case black
     case white
 }
+
+enum StartActionCard {
+    case castle
+    case gardens
+    case trainingYards
+}
