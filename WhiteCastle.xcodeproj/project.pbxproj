@@ -14,6 +14,10 @@
 		545BBC4B2C61652E00B8FB80 /* WhiteCastleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */; };
 		545BBC552C61652E00B8FB80 /* WhiteCastleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC542C61652E00B8FB80 /* WhiteCastleUITests.swift */; };
 		545BBC572C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC562C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift */; };
+		545BBC662C616B7F00B8FB80 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC652C616B7F00B8FB80 /* GameBoard.swift */; };
+		545BBC682C616C8200B8FB80 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC672C616C7C00B8FB80 /* Action.swift */; };
+		545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6B2C616DA300B8FB80 /* Components.swift */; };
+		545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6D2C6170B700B8FB80 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +38,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		545BBC362C61652D00B8FB80 /* WhiteCastle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiteCastle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		545BBC362C61652D00B8FB80 /* WhiteCastle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = WhiteCastle.app; path = "/Users/ich/Dateien/Projekte/WhiteCastle/WhiteCastle/build/Debug-iphoneos/WhiteCastle.app"; sourceTree = "<absolute>"; };
 		545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleApp.swift; sourceTree = "<group>"; };
 		545BBC3B2C61652D00B8FB80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		545BBC3D2C61652E00B8FB80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545BBC402C61652E00B8FB80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		545BBC462C61652E00B8FB80 /* WhiteCastleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiteCastleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		545BBC462C61652E00B8FB80 /* WhiteCastleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhiteCastleTests.xctest; path = "/Users/ich/Dateien/Projekte/WhiteCastle/WhiteCastle/build/Debug-iphoneos/WhiteCastle.app/PlugIns/WhiteCastleTests.xctest"; sourceTree = "<absolute>"; };
 		545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleTests.swift; sourceTree = "<group>"; };
-		545BBC502C61652E00B8FB80 /* WhiteCastleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiteCastleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		545BBC502C61652E00B8FB80 /* WhiteCastleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhiteCastleUITests.xctest; path = "/Users/ich/Dateien/Projekte/WhiteCastle/WhiteCastle/build/Debug-iphoneos/WhiteCastleUITests-Runner.app/PlugIns/WhiteCastleUITests.xctest"; sourceTree = "<absolute>"; };
 		545BBC542C61652E00B8FB80 /* WhiteCastleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleUITests.swift; sourceTree = "<group>"; };
 		545BBC562C61652E00B8FB80 /* WhiteCastleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		545BBC652C616B7F00B8FB80 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		545BBC672C616C7C00B8FB80 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		545BBC6B2C616DA300B8FB80 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		545BBC6D2C6170B700B8FB80 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,24 +85,17 @@
 				545BBC382C61652D00B8FB80 /* WhiteCastle */,
 				545BBC492C61652E00B8FB80 /* WhiteCastleTests */,
 				545BBC532C61652E00B8FB80 /* WhiteCastleUITests */,
-				545BBC372C61652D00B8FB80 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		545BBC372C61652D00B8FB80 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				545BBC362C61652D00B8FB80 /* WhiteCastle.app */,
-				545BBC462C61652E00B8FB80 /* WhiteCastleTests.xctest */,
-				545BBC502C61652E00B8FB80 /* WhiteCastleUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		545BBC382C61652D00B8FB80 /* WhiteCastle */ = {
 			isa = PBXGroup;
 			children = (
 				545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */,
+				545BBC652C616B7F00B8FB80 /* GameBoard.swift */,
+				545BBC672C616C7C00B8FB80 /* Action.swift */,
+				545BBC6D2C6170B700B8FB80 /* Player.swift */,
+				545BBC6B2C616DA300B8FB80 /* Components.swift */,
 				545BBC3B2C61652D00B8FB80 /* ContentView.swift */,
 				545BBC3D2C61652E00B8FB80 /* Assets.xcassets */,
 				545BBC3F2C61652E00B8FB80 /* Preview Content */,
@@ -215,7 +216,7 @@
 				Base,
 			);
 			mainGroup = 545BBC2D2C61652D00B8FB80;
-			productRefGroup = 545BBC372C61652D00B8FB80 /* Products */;
+			productRefGroup = 545BBC2D2C61652D00B8FB80;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -258,6 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				545BBC3C2C61652D00B8FB80 /* ContentView.swift in Sources */,
+				545BBC682C616C8200B8FB80 /* Action.swift in Sources */,
+				545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */,
+				545BBC662C616B7F00B8FB80 /* GameBoard.swift in Sources */,
+				545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */,
 				545BBC3A2C61652D00B8FB80 /* WhiteCastleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
