@@ -22,6 +22,14 @@ class Player {
     
     var points = 0
     
+    func gainResources(type: Ressource, amount: Int) -> Bool {
+        switch type {
+        case .food: return gainFood(amount)
+        case .iron: return gainIron(amount)
+        case .pearls:  return gainPearls(amount)
+        }
+    }
+    
     func gainFood(_ amount: Int) -> Bool {
         if food + amount < 0 {
             return false

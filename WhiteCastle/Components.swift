@@ -16,3 +16,9 @@ enum StartActionCard {
     case gardens
     case trainingYards
 }
+
+enum Ressource {
+    case food
+    case iron
+    case pearls
+}
