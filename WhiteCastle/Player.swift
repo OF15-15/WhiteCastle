@@ -52,7 +52,46 @@ class Player {
         }
         return true
     }
-
-
+    
+    func gainCoins(_ amount: Int) -> Bool {
+        if coins + amount < 0 {
+            return false
+        }
+        coins += amount
+        return true
+    }
+    func gainSeals(_ amount: Int) -> Bool {
+        if seals + amount < 0 {
+            return false
+        }
+        seals += amount
+        if seals > 5 {
+            seals = 5
+        }
+        return true
+    }
+    func gainInfluence(_ amount: Int) -> Bool {
+        // TBD: Implement choice to not pay seals
+        if influence <= 5 && influence + amount >= 6 {
+            if !gainSeals(-1) {
+                seals = 5
+                return false
+            }
+        }
+        if influence <= 10 && influence + amount >= 11 {
+            if !gainSeals(-2) {
+                seals = 10
+                return false
+            }
+        }
+        if influence <= 14 && influence + amount >= 15 {
+            if !gainSeals(-3) {
+                seals = 14
+                return false
+            }
+        }
+        influence += amount
+        return true
+    }
     
 }
