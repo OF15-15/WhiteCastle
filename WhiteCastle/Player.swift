@@ -74,23 +74,26 @@ class Player {
         // TBD: Implement choice to not pay seals
         if influence <= 5 && influence + amount >= 6 {
             if !gainSeals(-1) {
-                seals = 5
-                return false
+                influence = 5
+                return true
             }
         }
         if influence <= 10 && influence + amount >= 11 {
             if !gainSeals(-2) {
-                seals = 10
-                return false
+                influence = 10
+                return true
             }
         }
         if influence <= 14 && influence + amount >= 15 {
             if !gainSeals(-3) {
-                seals = 14
-                return false
+                 influence = 14
+                return true
             }
         }
         influence += amount
+        if influence > 20 {
+            influence = 20
+        }
         return true
     }
     
