@@ -20,6 +20,9 @@ struct PlayerTests {
             #expect(p.pearls == 0)
             #expect(p.gainFood(100))
             #expect(p.food == 7)
+            
+            #expect(p.gainSeals(6))
+            #expect(p.seals == 5)
         }
         
         @Test func testLowerLimits() {
@@ -35,7 +38,29 @@ struct PlayerTests {
             #expect(!p.gainPearls(-8))
             #expect(p.pearls == 7)
             
+            #expect(!p.gainSeals(-1))
+            #expect(!p.gainCoins(-1))
         }
+        
+        @Test func testInfluence() {
+            let p = Player()
+            
+            #expect(p.gainInfluence(7))
+            #expect(p.influence == 5)
+            _ = p.gainSeals(2)
+            _ = p.gainInfluence(4)
+            #expect(p.influence == 9)
+            #expect(p.seals == 1)
+            
+            _ = p.gainInfluence(9)
+            #expect(p.influence == 10)
+            _ = p.gainSeals(5)
+            _ = p.gainInfluence(200)
+            
+            #expect(p.seals == 0)
+            #expect(p.influence == 20)
+        }
+        
           
     }
 }
