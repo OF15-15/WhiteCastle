@@ -18,6 +18,7 @@
 		545BBC682C616C8200B8FB80 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC672C616C7C00B8FB80 /* Action.swift */; };
 		545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6B2C616DA300B8FB80 /* Components.swift */; };
 		545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6D2C6170B700B8FB80 /* Player.swift */; };
+		545BBC702C617CE000B8FB80 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6F2C617CE000B8FB80 /* PlayerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		545BBC672C616C7C00B8FB80 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		545BBC6B2C616DA300B8FB80 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		545BBC6D2C6170B700B8FB80 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		545BBC6F2C617CE000B8FB80 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		545BBC712C61838800B8FB80 /* StandardTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StandardTestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		545BBC2D2C61652D00B8FB80 = {
 			isa = PBXGroup;
 			children = (
+				545BBC712C61838800B8FB80 /* StandardTestPlan.xctestplan */,
 				545BBC382C61652D00B8FB80 /* WhiteCastle */,
 				545BBC492C61652E00B8FB80 /* WhiteCastleTests */,
 				545BBC532C61652E00B8FB80 /* WhiteCastleUITests */,
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */,
+				545BBC6F2C617CE000B8FB80 /* PlayerTests.swift */,
 			);
 			path = WhiteCastleTests;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545BBC702C617CE000B8FB80 /* PlayerTests.swift in Sources */,
 				545BBC4B2C61652E00B8FB80 /* WhiteCastleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

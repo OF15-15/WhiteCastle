@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "A8AC4695-F949-4917-9E21-95B5DC391611",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:WhiteCastle.xcodeproj",
+        "identifier" : "545BBC452C61652E00B8FB80",
+        "name" : "WhiteCastleTests"
+      }
+    }
+  ],
+  "version" : 1
+}
