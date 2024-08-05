@@ -8,6 +8,8 @@
 import Foundation
 
 struct GameBoard {
-    
+    // not finished obviously
+    let wellBottom = Ressource.food
+    let wellTop = Ressource.food
     
 }
