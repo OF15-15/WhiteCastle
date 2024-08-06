@@ -42,3 +42,16 @@ class StartActionCard: Card {
     }
 }
 
+class StartRessourceCard: Card {
+    // TBD ressource generation
+    convenience init(ressource: Ressource) {
+        let lanternClosure = { (player: Player) -> Void in
+            player.gainResources(type: ressource, amount: 1)
+        }
+        self.init(cardType: .startRessource, top: Action(), middle: Action(), bottom: Action(), lantern: lanternClosure)
+    }
+    
+    override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
+        super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
+    }
+}
