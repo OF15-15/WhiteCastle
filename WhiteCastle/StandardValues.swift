@@ -1,0 +1,21 @@
+//
+//  StandardValues.swift
+//  WhiteCastle
+//
+//  Created by Ich on 06.08.24.
+//
+
+enum DColor {
+    case red
+    case black
+    case white
+    case all
+}
+
+enum Resource {
+    case food
+    case iron
+    case pearls
+    case seals
+    case coins
+}

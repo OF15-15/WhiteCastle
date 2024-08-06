@@ -111,7 +111,6 @@ class PlayerBoardAction: Action {
     }
 }
 
-
 class LanternAction: Action {
     @discardableResult func run(player: Player) -> Bool {
         for lanternCard in player.lanternCards {
@@ -119,4 +118,53 @@ class LanternAction: Action {
         }
         return true
     }
+}
+
+class GainAction: Action {
+    var resource: Resource
+    var amount: Int
+    
+    init(_ resource: Resource, _ amount: Int) {
+        self.amount = amount
+        self.resource = resource
+    }
+    
+    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
+        let a = super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
+        let b = player.gainResources(type: resource, amount: amount)
+        return a && b
+    }
+}
+
+class GardenAction: Action {
+    
+}
+
+class YardAction: Action {
+    
+}
+
+class CastleAction: Action {
+    
+}
+
+class TwoAction: Action {
+    var firstAction: Action
+    var secondAction: Action
+    
+    init(_ firstAction: Action, _ secondAction: Action) {
+        diceColor = firstAction.diceColor
+        actionValue = firstAction.actionValue
+        
+        self.firstAction = firstAction
+        self.secondAction = secondAction
+    }
+    
+    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
+        let a = super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
+        let b = firstAction.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
+        let c = secondAction.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
+        return a && b && c
+    }
+    
 }

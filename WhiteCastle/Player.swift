@@ -39,6 +39,8 @@ class Player {
         case .food: return gainFood(amount)
         case .iron: return gainIron(amount)
         case .pearls:  return gainPearls(amount)
+        case .seals: return gainSeals(amount)
+        case .coins: return gainCoins(amount)
         }
     }
     
