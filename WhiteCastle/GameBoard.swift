@@ -8,8 +8,14 @@
 import Foundation
 
 struct GameBoard {
-    // not finished obviously
-    let wellBottom = Resource.food
-    let wellTop = Resource.food
+    let gardenLeftRed, gardenLeftBlack, gardenLeftWhite: Garden
+    let gardenRightRed, gardenRightBlack, gardenRightWhite: Garden
     
+    let wellTop, wellBottom: Resource
+    
+    let castleFirstLeft, castleFirstMiddle, castleFirstRight: CastleRoom
+    let castleSecondLeft, castleSecondRight: CastleRoom
+    let castleThird: CastleTop
+    
+    let trainingYard5, trainingYard3, trainingYard1: TrainingYard
 }
