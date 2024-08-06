@@ -24,7 +24,13 @@ struct ActionCards {
     
     let stewardCards = [ // 15 in total
         StewardCard(top: TwoAction(GainAction(.seals, -1), YardAction()),
-                    middle: TwoAction(GainAction(.food, -1), GainAction(.pearls, 1)),
-                    bottom: TwoAction(GainAction(.iron, -1), LanternAction()))
+                    middle: TwoAction(GainAction(.food, 1), GainAction(.pearls, 1)),
+                    bottom: TwoAction(GainAction(.iron, 1), LanternAction())),
+        StewardCard(top: GainAction(.points, 2),
+                    middle: TwoAction(GainAction(.seals, 1), GainAction(.any, 1)),
+                    bottom: TwoAction(GainAction(.seals, -1), YardAction())),
+        StewardCard(top: TwoAction(GainAction(.seals, -1), CastleAction()),
+                    middle: GainAction(.influence, 1),
+                    bottom: GainAction(.iron, 2))
     ]
 }

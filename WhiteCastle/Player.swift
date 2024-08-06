@@ -41,9 +41,16 @@ class Player {
         case .pearls:  return gainPearls(amount)
         case .seals: return gainSeals(amount)
         case .coins: return gainCoins(amount)
+        case .points: return gainPoints(amount)
+        case .influence: return gainInfluence(amount)
+        case .any: return gainAny(amount)
         }
     }
     
+    @discardableResult func gainAny(_ amount: Int) -> Bool {
+        // TBD
+        gainFood(amount)
+    }
     @discardableResult func gainFood(_ amount: Int) -> Bool {
         if food + amount < 0 {
             return false

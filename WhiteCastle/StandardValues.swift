@@ -18,4 +18,7 @@ enum Resource {
     case pearls
     case seals
     case coins
+    case influence
+    case points
+    case any
 }
