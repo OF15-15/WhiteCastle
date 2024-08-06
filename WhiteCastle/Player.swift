@@ -8,19 +8,29 @@
 import Foundation
 
 class Player {
-    var food = 0
-    var iron = 0
-    var pearls = 0
+    var food, iron, pearls: Int
+    var coins, seals, influence: Int
+    var gardeners, courtiers, warriors: Int
+    var points: Int
+
+    var lantern: LanternAction
+    var lanternCards: [Card]
     
-    var coins = 0
-    var seals = 0
-    var influence = 0
+    init(startResourceCard: StartRessourceCard) {
+        food = startResourceCard.food
+        iron = startResourceCard.iron
+        pearls = startResourceCard.pearls
+        coins = startResourceCard.coins
+        seals = startResourceCard.seals
+        influence = 0
+        gardeners = 5; courtiers = 5; warriors = 5
+        points = 0
+        
+        lantern = LanternAction()
+        lanternCards = [startResourceCard]
+    }
     
-    var gardeners = 5
-    var courtiers = 5
-    var warriors = 5
     
-    var points = 0
     
     func gainResources(type: Ressource, amount: Int) -> Bool {
         switch type {
