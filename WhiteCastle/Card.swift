@@ -8,8 +8,8 @@
 enum CardType {
     case startAction
     case startResource
-    case firstLevel
-    case secondLevel
+    case steward
+    case diplomat
 }
 
 
@@ -74,12 +74,12 @@ class StartResourceCard: Card {
     }
 }
 
-class FirstLevelCard: Card {
+class StewardCard: Card {
     convenience init(top: Action, middle: Action, bottom: Action) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainCoins(1)
         }
-        self.init(cardType: .firstLevel, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
+        self.init(cardType: .steward, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
     }
         
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
@@ -87,12 +87,12 @@ class FirstLevelCard: Card {
     }
 }
 
-class SecondLevelCard: Card {
+class DiplomatCard: Card {
     convenience init(top: Action, middle: Action, bottom: Action) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainPoints(1)
         }
-        self.init(cardType: .firstLevel, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
+        self.init(cardType: .diplomat, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
     }
         
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {

@@ -8,8 +8,8 @@
 import Foundation
 
 struct GameBoard {
-    let gardenLeftRed, gardenLeftBlack, gardenLeftWhite: Garden
-    let gardenRightRed, gardenRightBlack, gardenRightWhite: Garden
+    let gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
+    let gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
     
     let wellTop, wellBottom: Resource
     
