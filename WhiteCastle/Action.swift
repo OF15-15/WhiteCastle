@@ -8,8 +8,17 @@
 import Foundation
 
 class Action{
-    let diceColor: DColor = DColor.red
-    let actionValue: Int = 6
+    var diceColor: DColor = .all
+    var actionValue: Int = 6
+    
+    init() { }
+    
+    init(diceColor dCol: DColor, actionValue actVal: Int) {
+        diceColor = dCol
+        actionValue = actVal
+    }
+    
+    
     func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool{
         if 0 < diceValue && diceValue <= 6 {
             let poss = player.gainCoins(actionValue - diceValue)
@@ -20,7 +29,11 @@ class Action{
 }
 
 class WellAction: Action {
-    let activationValue: Int = 1
+    
+    override init() {
+        super.init(diceColor: .all, actionValue: 1)
+    }
+    
     override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
         _ = super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
         _ = player.gainSeals(1)

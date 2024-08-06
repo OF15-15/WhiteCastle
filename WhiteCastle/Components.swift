@@ -9,6 +9,7 @@ enum DColor {
     case red
     case black
     case white
+    case all
 }
 
 enum StartActionCard {
