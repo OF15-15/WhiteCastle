@@ -127,6 +127,7 @@ class GainAction: Action {
     init(_ resource: Resource, _ amount: Int) {
         self.amount = amount
         self.resource = resource
+        super.init()
     }
     
     override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
@@ -153,11 +154,10 @@ class TwoAction: Action {
     var secondAction: Action
     
     init(_ firstAction: Action, _ secondAction: Action) {
-        diceColor = firstAction.diceColor
-        actionValue = firstAction.actionValue
-        
         self.firstAction = firstAction
         self.secondAction = secondAction
+        
+        super.init(diceColor: firstAction.diceColor, actionValue: firstAction.actionValue)
     }
     
     override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
