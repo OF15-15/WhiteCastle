@@ -110,3 +110,12 @@ class PlayerBoardAction: Action {
     }
 }
 
+
+class LanternAction: Action {
+    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
+        for lanternCard in player.lanternCards {
+            lanternCard.lantern.run()
+        }
+    }
+    
+}
