@@ -12,7 +12,7 @@ enum DColor {
     case all
 }
 
-enum StartActionCard {
+enum StartActionCar {
     case castle
     case gardens
     case trainingYards

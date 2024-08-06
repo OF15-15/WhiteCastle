@@ -119,13 +119,3 @@ class LanternAction: Action {
     }
     
 }
-
-
-class SimpleAction: Action {
-    let runFunc: (Int) -> Bool
-    override init(runFunc runFunc: (Int) -> Bool) {
-        super.init()
-        self.runFunc = runFunc
-    }
-    override func run(player: Player)
-}

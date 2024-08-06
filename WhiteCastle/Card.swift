@@ -20,7 +20,7 @@ class Card {
     let bottom: Action
     let lantern: (Player) -> Void
     
-    init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: Action) {
+    init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
         self.cardType = cardType
         self.top = top
         self.middle = middle
@@ -30,8 +30,15 @@ class Card {
 }
 
 class StartActionCard: Card {
-    override init(action: Action) {
-        
-        super.init(cardType: .startAction, top: action, middle: action, bottom: action, lantern: lanternAction)
+    convenience init(action: Action) {
+        let lanternClosure = { (player: Player) -> Void in
+            player.gainInfluence(1)
+        }
+        self.init(cardType: .startAction, top: action, middle: action, bottom: action, lantern: lanternClosure)
+    }
+    
+    override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
+        super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
     }
 }
+
