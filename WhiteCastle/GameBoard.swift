@@ -19,7 +19,7 @@ struct GameBoard {
     var castleRooms: [CastleRoom]
     // TBD daimyo var castleThird: CastleTop
     
-    // var trainingYard5, trainingYard3, trainingYard1: TrainingYard
+    var trainingYardFive, trainingYardThree, trainingYardOne: YardAction
     
     // var players: [Player]
     
@@ -39,7 +39,7 @@ struct GameBoard {
         
         castleRooms = []
         
-        var diceTiles = comps.DiceTiles.shuffled()
+        var diceTiles = comps.diceTiles.shuffled()
         
         var oneOfEach: [DiceTile] = []
         for i in 1...diceTiles.count {
@@ -92,6 +92,13 @@ struct GameBoard {
         // shuffle plant / stone stack, one card onto each spot
         
         // 4 randomly selected yard tiles
+        
+        let yardTiles = comps.yardTiles.shuffled()
+        
+        trainingYardOne = yardTiles[0].yellow
+        trainingYardThree = yardTiles[1].blue
+        trainingYardFive = TwoAction(yardTiles[2].yellow, yardTiles[0].blue)
+        
         
         // bridges / rounds / players
                 

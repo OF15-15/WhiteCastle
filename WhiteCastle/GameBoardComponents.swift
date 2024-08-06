@@ -8,7 +8,3 @@
 class Garden {
     
 }
-
-class TrainingYard {
-    
-}

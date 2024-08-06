@@ -39,7 +39,7 @@ struct Components {
         DiplomatCard(top: TwoAction(GainAction(.influence, 1), LanternAction()), bottom: GardenAction(), bottomTwo: false)
     ]
     
-    let DiceTiles = [
+    let diceTiles = [
         DiceTile(.red, .food),
         DiceTile(.red, .iron),
         DiceTile(.red, .pearls),
@@ -55,5 +55,12 @@ struct Components {
         DiceTile(.white, .pearls),
         DiceTile(.white, .any),
         DiceTile(.white, .coins)
+    ]
+    
+    let yardTiles: [YardTile] = [ // 8 in total, not correct!!!!
+        YardTile(blue: CastleAction(), yellow: GainAction(.influence, 2)),
+        YardTile(blue: GardenAction(), yellow: GainAction(.points, 2)),
+        YardTile(blue: YardAction(), yellow: LanternAction()),
+        YardTile(blue: CastleAction(), yellow: WellAction())
     ]
 }
