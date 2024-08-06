@@ -49,7 +49,26 @@ struct GameBoard {
             oneOfEach.append(diceTiles.remove(at: i))
         }
         
+        for i in 1...3 {
+            var lastDT = 1
+            if oneOfEach.last!.color == diceTiles.first!.color {
+                while diceTiles.first!.color == diceTiles[lastDT].color {
+                    lastDT += 1
+                }
+            }
+            castleRooms.append(CastleRoom(card: stewardCards.popLast()!, level: .first, diceTiles: [oneOfEach.popLast()!, diceTiles.removeFirst(), diceTiles.remove(at: lastDT)]))
+        }
         
+        for i in 1...2 {
+            var lastDT = 1
+            while diceTiles.first!.color == diceTiles[lastDT].color {
+                lastDT += 1
+            }
+            castleRooms.append(CastleRoom(card: diplomatCards.popLast()!, level: .second, diceTiles: [diceTiles.removeFirst(), diceTiles.remove(at: lastDT)]))
+        }
+        
+        wellTop = diceTiles[0].resource
+        wellBottom = diceTiles[1].resource
         
         
         // all three colors in top spot, first level

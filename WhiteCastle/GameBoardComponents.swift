@@ -9,14 +9,6 @@ class Garden {
     
 }
 
-class CastleRoom {
-    
-}
-
-class CastleTop {
-    
-}
-
 class TrainingYard {
     
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		540FC9FD2C62A10D005CFF4E /* StandardValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540FC9FC2C62A109005CFF4E /* StandardValues.swift */; };
 		540FC9FF2C62B54C005CFF4E /* DiceTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540FC9FE2C62B540005CFF4E /* DiceTile.swift */; };
+		540FCA012C62BD82005CFF4E /* CastleRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540FCA002C62BD7D005CFF4E /* CastleRoom.swift */; };
 		545BBC3A2C61652D00B8FB80 /* WhiteCastleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */; };
 		545BBC3C2C61652D00B8FB80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC3B2C61652D00B8FB80 /* ContentView.swift */; };
 		545BBC3E2C61652E00B8FB80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545BBC3D2C61652E00B8FB80 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		540FC9FB2C62A0C7005CFF4E /* WhiteCastleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiteCastleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		540FC9FC2C62A109005CFF4E /* StandardValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardValues.swift; sourceTree = "<group>"; };
 		540FC9FE2C62B540005CFF4E /* DiceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTile.swift; sourceTree = "<group>"; };
+		540FCA002C62BD7D005CFF4E /* CastleRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleRoom.swift; sourceTree = "<group>"; };
 		545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleApp.swift; sourceTree = "<group>"; };
 		545BBC3B2C61652D00B8FB80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		545BBC3D2C61652E00B8FB80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		545BBC382C61652D00B8FB80 /* WhiteCastle */ = {
 			isa = PBXGroup;
 			children = (
+				540FCA002C62BD7D005CFF4E /* CastleRoom.swift */,
 				540FC9FE2C62B540005CFF4E /* DiceTile.swift */,
 				540FC9FC2C62A109005CFF4E /* StandardValues.swift */,
 				545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */,
@@ -284,6 +287,7 @@
 				545BBC682C616C8200B8FB80 /* Action.swift in Sources */,
 				545BBC732C623DC100B8FB80 /* Card.swift in Sources */,
 				545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */,
+				540FCA012C62BD82005CFF4E /* CastleRoom.swift in Sources */,
 				545BBC752C625BE300B8FB80 /* GameBoardComponents.swift in Sources */,
 				545BBC662C616B7F00B8FB80 /* GameBoard.swift in Sources */,
 				545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */,
