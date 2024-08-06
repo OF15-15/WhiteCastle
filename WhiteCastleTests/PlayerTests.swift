@@ -12,9 +12,10 @@ struct PlayerTests {
     
     @Suite struct ResourceTests {
         let standardStartResourceCard = StartResourceCard()
+        let standardStartActionCard = StartActionCard(action: Action())
         
         @Test func testUpperLimits() {
-            let p = Player(startResourceCard: standardStartResourceCard)
+            let p = Player(startResourceCard: standardStartResourceCard, startActionCard: standardStartActionCard)
             #expect(p.gainIron(2))
             #expect(p.iron == 2)
             #expect(p.gainPearls(0))
@@ -27,7 +28,7 @@ struct PlayerTests {
         }
         
         @Test func testLowerLimits() {
-            let p = Player(startResourceCard: standardStartResourceCard)
+            let p = Player(startResourceCard: standardStartResourceCard, startActionCard: standardStartActionCard)
             #expect(p.gainFood(1))
             #expect(!p.gainFood(-2))
             #expect(p.food == 1)
@@ -44,7 +45,7 @@ struct PlayerTests {
         }
         
         @Test func testInfluence() {
-            let p = Player(startResourceCard: standardStartResourceCard)
+            let p = Player(startResourceCard: standardStartResourceCard, startActionCard: standardStartActionCard)
             
             #expect(p.gainInfluence(7))
             #expect(p.influence == 5)
@@ -66,7 +67,8 @@ struct PlayerTests {
     @Suite struct StartResourceTests {
         @Test func standardStartResourceCard() {
             let src = StartResourceCard(lanternResource: .food, food: 2, iron: 1, pearls: 3, coins: 2, seals: 1)
-            let p = Player(startResourceCard: src)
+            let sac = StartActionCard(action: Action())
+            let p = Player(startResourceCard: src, startActionCard: sac)
             #expect(p.food == 2)
             #expect(p.iron == 1)
             #expect(p.pearls == 3)

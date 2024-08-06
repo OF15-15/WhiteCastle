@@ -15,8 +15,9 @@ class Player {
 
     var lantern: LanternAction
     var lanternCards: [Card]
+    var actionCard: Card
     
-    init(startResourceCard: StartResourceCard) {
+    init(startResourceCard: StartResourceCard, startActionCard: StartActionCard) {
         food = startResourceCard.food
         iron = startResourceCard.iron
         pearls = startResourceCard.pearls
@@ -28,6 +29,7 @@ class Player {
         
         lantern = LanternAction()
         lanternCards = [startResourceCard]
+        actionCard = startActionCard
     }
     
     
@@ -118,5 +120,11 @@ class Player {
     @discardableResult func gainPoints(_ amount: Int) -> Bool {
         self.points += amount
         return true
+    }
+    
+    
+    func gainActionCard(_ card: Card) {
+        lanternCards.append(actionCard)
+        actionCard = card
     }
 }

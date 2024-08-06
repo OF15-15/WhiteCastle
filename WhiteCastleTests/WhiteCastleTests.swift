@@ -10,7 +10,7 @@ import Testing
 
 struct WhiteCastleTests {
     
-    @Test testLanternCards() {
+    @Test func testLanternCards() {
         
         let src = StartResourceCard(lanternResource: .food, food: 2, iron: 1, pearls: 3, coins: 2, seals: 1)
         let sac = StartActionCard(action: Action())
