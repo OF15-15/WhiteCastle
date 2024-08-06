@@ -19,7 +19,7 @@ class Action{
     }
     
     
-    func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool{
+    @discardableResult func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool{
         if 0 < diceValue && diceValue <= 6 {
             let poss = player.gainCoins(actionValue - diceValue)
             return poss
@@ -34,12 +34,12 @@ class WellAction: Action {
         super.init(diceColor: .all, actionValue: 1)
     }
     
-    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
-        _ = super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
-        _ = player.gainSeals(1)
+    @discardableResult override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
+        super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
+        player.gainSeals(1)
         
-        _ = player.gainResources(type: gameBoard.wellTop, amount: 1)
-        _ = player.gainResources(type: gameBoard.wellBottom, amount: 1)
+        player.gainResources(type: gameBoard.wellTop, amount: 1)
+        player.gainResources(type: gameBoard.wellBottom, amount: 1)
         return true
     }
 }
@@ -52,7 +52,7 @@ class PlayerBoardAction: Action {
         super.init(diceColor: dCol, actionValue: actVal)
     }
     
-    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
+    @discardableResult override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
         if !super.run(player: player, gameBoard: gameBoard, diceValue: diceValue) {
             return false
         }
@@ -113,7 +113,7 @@ class PlayerBoardAction: Action {
 
 
 class LanternAction: Action {
-    func run(player: Player) -> Bool {
+    @discardableResult func run(player: Player) -> Bool {
         for lanternCard in player.lanternCards {
             lanternCard.lantern(player)
         }
