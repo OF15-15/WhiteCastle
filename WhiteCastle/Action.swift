@@ -80,7 +80,7 @@ class PlayerBoardAction: Action {
                 case 0, 1, 2, 4:
                     player.gainIron(1)
                 case 3:
-                    player.lantern.run()
+                    player.lantern.run(player: player)
                 case 5:
                     player.gainCoins(2)
                 default:
@@ -98,7 +98,7 @@ class PlayerBoardAction: Action {
                 case 3:
                     player.gainSeals(1)
                 case 5:
-                    player.lantern.run()
+                    player.lantern.run(player: player)
                 default:
                     raise(43)
                 }
@@ -107,15 +107,16 @@ class PlayerBoardAction: Action {
         case .all:
             raise(42)
         }
+        return true
     }
 }
 
 
 class LanternAction: Action {
-    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
+    func run(player: Player) -> Bool {
         for lanternCard in player.lanternCards {
-            lanternCard.lantern()
+            lanternCard.lantern(player)
         }
+        return true
     }
-    
 }

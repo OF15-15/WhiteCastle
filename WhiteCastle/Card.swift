@@ -43,15 +43,33 @@ class StartActionCard: Card {
 }
 
 class StartRessourceCard: Card {
-    // TBD ressource generation
-    convenience init(ressource: Ressource) {
+    var food, iron, pearls, coins, seals: Int
+    
+    convenience init(lanternResource: Ressource, food: Int, iron: Int, pearls: Int, coins: Int, seals: Int) {
         let lanternClosure = { (player: Player) -> Void in
-            player.gainResources(type: ressource, amount: 1)
+            player.gainResources(type: lanternResource, amount: 1)
         }
         self.init(cardType: .startRessource, top: Action(), middle: Action(), bottom: Action(), lantern: lanternClosure)
+        
+        self.food = food
+        self.iron = iron
+        self.pearls = pearls
+        self.coins = coins
+        self.seals = seals
+        
+    }
+    
+    convenience init() {
+        self.init(cardType: .startRessource, top: Action(), middle: Action(), bottom: Action(), lantern: { (player: Player) -> Void in })
     }
     
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
+        self.food = 0
+        self.iron = 0
+        self.pearls = 0
+        self.coins = 0
+        self.seals = 0
+        
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
     }
 }

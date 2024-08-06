@@ -11,9 +11,10 @@ import Testing
 struct PlayerTests {
 
     @Suite struct RessourceTests {
+        let standardStartResourceCard = StartRessourceCard()
         
         @Test func testUpperLimits() {
-            let p = Player()
+            let p = Player(startResourceCard: standardStartResourceCard)
             #expect(p.gainIron(2))
             #expect(p.iron == 2)
             #expect(p.gainPearls(0))
@@ -26,7 +27,7 @@ struct PlayerTests {
         }
         
         @Test func testLowerLimits() {
-            let p = Player()
+            let p = Player(startResourceCard: standardStartResourceCard)
             #expect(p.gainFood(1))
             #expect(!p.gainFood(-2))
             #expect(p.food == 1)
@@ -43,7 +44,7 @@ struct PlayerTests {
         }
         
         @Test func testInfluence() {
-            let p = Player()
+            let p = Player(startResourceCard: standardStartResourceCard)
             
             #expect(p.gainInfluence(7))
             #expect(p.influence == 5)
