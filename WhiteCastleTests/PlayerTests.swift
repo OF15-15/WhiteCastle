@@ -66,7 +66,7 @@ struct PlayerTests {
     
     @Suite struct StartResourceTests {
         @Test func standardStartResourceCard() {
-            let src = StartResourceCard(lanternResource: .food, food: 2, iron: 1, pearls: 3, coins: 2, seals: 1)
+            let src = StartResourceCard(lanternResource: .food, food: 2, iron: 1, pearls: 3, coins: 2, seals: 1, any: 0, decree: 0)
             let sac = StartActionCard(action: Action())
             let p = Player(startResourceCard: src, startActionCard: sac)
             #expect(p.food == 2)

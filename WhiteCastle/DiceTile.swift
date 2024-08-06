@@ -9,6 +9,7 @@ struct DiceTile {
     let color: DColor
     let resource: Resource
     init(_ color: DColor, _ resource: Resource) {
-        
+        self.color = color
+        self.resource = resource
     }
 }

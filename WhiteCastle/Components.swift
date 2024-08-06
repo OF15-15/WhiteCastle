@@ -40,11 +40,11 @@ struct Components {
     ]
     
     let DiceTiles = [
-        DiceTile(.white, .food)
-        DiceTile(.white, .iron),
-        DiceTile(.white, .pearls),
-        DiceTile(.white, .any),
-        DiceTile(.white, .coins),
+        DiceTile(.red, .food),
+        DiceTile(.red, .iron),
+        DiceTile(.red, .pearls),
+        DiceTile(.red, .any),
+        DiceTile(.red, .coins),
         DiceTile(.black, .food),
         DiceTile(.black, .iron),
         DiceTile(.black, .pearls),

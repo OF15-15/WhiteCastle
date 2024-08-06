@@ -8,8 +8,8 @@
 import Foundation
 
 struct GameBoard {
-    var gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
-    var gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
+    // var gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
+    // var gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
     
     var wellTop, wellBottom: Resource
     
@@ -19,9 +19,11 @@ struct GameBoard {
     var castleRooms: [CastleRoom]
     // TBD daimyo var castleThird: CastleTop
     
-    var trainingYard5, trainingYard3, trainingYard1: TrainingYard
+    // var trainingYard5, trainingYard3, trainingYard1: TrainingYard
     
-    var players: [Player]
+    // var players: [Player]
+    
+    
     init() {
         var comps = Components()
         // setup guide
@@ -35,21 +37,32 @@ struct GameBoard {
         // put a card in each of the open slots
         // top castle card
         
+        castleRooms = []
+        
         var diceTiles = comps.DiceTiles.shuffled()
         
         var oneOfEach: [DiceTile] = []
-        var i = 0
-        outerloop: while oneOfEach.count < 3 {
-            let dt = diceTiles[0]
-            for elem in oneOfEach {
-                if dt.color != elem.color {
-                    continue outerloop
-                }
+        for i in 1...diceTiles.count {
+            if diceTiles[i].color == .red {
+                oneOfEach.append(diceTiles.remove(at: i))
+                break
             }
-            oneOfEach.append(diceTiles.remove(at: i))
+        }
+        for i in 1...diceTiles.count {
+            if diceTiles[i].color == .black {
+                oneOfEach.append(diceTiles.remove(at: i))
+                break
+            }
+        }
+        for i in 1...diceTiles.count {
+            if diceTiles[i].color == .white {
+                oneOfEach.append(diceTiles.remove(at: i))
+                break
+            }
         }
         
-        for i in 1...3 {
+        
+        for _ in 1...3 {
             var lastDT = 1
             if oneOfEach.last!.color == diceTiles.first!.color {
                 while diceTiles.first!.color == diceTiles[lastDT].color {
@@ -59,7 +72,7 @@ struct GameBoard {
             castleRooms.append(CastleRoom(card: stewardCards.popLast()!, level: .first, diceTiles: [oneOfEach.popLast()!, diceTiles.removeFirst(), diceTiles.remove(at: lastDT)]))
         }
         
-        for i in 1...2 {
+        for _ in 1...2 {
             var lastDT = 1
             while diceTiles.first!.color == diceTiles[lastDT].color {
                 lastDT += 1
@@ -81,7 +94,7 @@ struct GameBoard {
         // 4 randomly selected yard tiles
         
         // bridges / rounds / players
-        
+                
         // turn order
         // random src (p+1) add sac below each
         // in opposite order: choos one pair
