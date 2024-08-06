@@ -114,8 +114,18 @@ class PlayerBoardAction: Action {
 class LanternAction: Action {
     override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
         for lanternCard in player.lanternCards {
-            lanternCard.lantern.run()
+            lanternCard.lantern()
         }
     }
     
+}
+
+
+class SimpleAction: Action {
+    let runFunc: (Int) -> Bool
+    override init(runFunc runFunc: (Int) -> Bool) {
+        super.init()
+        self.runFunc = runFunc
+    }
+    override func run(player: Player)
 }

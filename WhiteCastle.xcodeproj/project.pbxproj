@@ -19,6 +19,7 @@
 		545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6B2C616DA300B8FB80 /* Components.swift */; };
 		545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6D2C6170B700B8FB80 /* Player.swift */; };
 		545BBC702C617CE000B8FB80 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC6F2C617CE000B8FB80 /* PlayerTests.swift */; };
+		545BBC732C623DC100B8FB80 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC722C623DB500B8FB80 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		545BBC6D2C6170B700B8FB80 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		545BBC6F2C617CE000B8FB80 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		545BBC712C61838800B8FB80 /* StandardTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StandardTestPlan.xctestplan; sourceTree = "<group>"; };
+		545BBC722C623DB500B8FB80 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */,
 				545BBC652C616B7F00B8FB80 /* GameBoard.swift */,
 				545BBC672C616C7C00B8FB80 /* Action.swift */,
+				545BBC722C623DB500B8FB80 /* Card.swift */,
 				545BBC6D2C6170B700B8FB80 /* Player.swift */,
 				545BBC6B2C616DA300B8FB80 /* Components.swift */,
 				545BBC3B2C61652D00B8FB80 /* ContentView.swift */,
@@ -265,6 +268,7 @@
 			files = (
 				545BBC3C2C61652D00B8FB80 /* ContentView.swift in Sources */,
 				545BBC682C616C8200B8FB80 /* Action.swift in Sources */,
+				545BBC732C623DC100B8FB80 /* Card.swift in Sources */,
 				545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */,
 				545BBC662C616B7F00B8FB80 /* GameBoard.swift in Sources */,
 				545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */,
