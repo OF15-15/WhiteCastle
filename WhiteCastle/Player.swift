@@ -32,7 +32,7 @@ class Player {
     
     
     
-    func gainResources(type: Ressource, amount: Int) -> Bool {
+    @discardableResult func gainResources(type: Ressource, amount: Int) -> Bool {
         switch type {
         case .food: return gainFood(amount)
         case .iron: return gainIron(amount)
@@ -40,7 +40,7 @@ class Player {
         }
     }
     
-    func gainFood(_ amount: Int) -> Bool {
+    @discardableResult func gainFood(_ amount: Int) -> Bool {
         if food + amount < 0 {
             return false
         }
@@ -50,7 +50,7 @@ class Player {
         }
         return true
     }
-    func gainIron(_ amount: Int) -> Bool {
+    @discardableResult func gainIron(_ amount: Int) -> Bool {
         if iron + amount < 0 {
             return false
         }
@@ -60,7 +60,7 @@ class Player {
         }
         return true
     }
-    func gainPearls(_ amount: Int) -> Bool {
+    @discardableResult func gainPearls(_ amount: Int) -> Bool {
         if pearls + amount < 0 {
             return false
         }
@@ -71,14 +71,14 @@ class Player {
         return true
     }
     
-    func gainCoins(_ amount: Int) -> Bool {
+    @discardableResult func gainCoins(_ amount: Int) -> Bool {
         if coins + amount < 0 {
             return false
         }
         coins += amount
         return true
     }
-    func gainSeals(_ amount: Int) -> Bool {
+    @discardableResult func gainSeals(_ amount: Int) -> Bool {
         if seals + amount < 0 {
             return false
         }
@@ -88,7 +88,7 @@ class Player {
         }
         return true
     }
-    func gainInfluence(_ amount: Int) -> Bool {
+    @discardableResult func gainInfluence(_ amount: Int) -> Bool {
         // TBD: Implement choice to not pay seals
         if influence <= 5 && influence + amount >= 6 {
             if !gainSeals(-1) {
@@ -115,7 +115,7 @@ class Player {
         return true
     }
     
-    func gainPoints(_ amount: Int) -> Bool {
+    @discardableResult func gainPoints(_ amount: Int) -> Bool {
         self.points += amount
         return true
     }
