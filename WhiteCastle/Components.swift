@@ -7,10 +7,10 @@
 
 struct ActionCards {
     let startResourceCards = [ // should be 9 in total
-        StartResourceCard(lanternResource: .iron, food: 0, iron: 1, pearls: 2, coins: 4, seals: 0), // extra card though
-        StartResourceCard(lanternResource: .food, food: 4, iron: 2, pearls: 0, coins: 3, seals: 2),
-        StartResourceCard(lanternResource: .pearls, food: 2, iron: 0, pearls:0, coins: 4, seals: 2), // 2 food should be any resources
-        StartResourceCard(lanternResource: .food, food: 1, iron: 0, pearls: 0, coins: 2, seals: 2) // extra card & food should be any
+        StartResourceCard(lanternResource: .iron, food: 0, iron: 1, pearls: 2, coins: 4, seals: 0, any: 0, decree: 2),
+        StartResourceCard(lanternResource: .food, food: 4, iron: 2, pearls: 0, coins: 3, seals: 2, any: 0, decree: 0),
+        StartResourceCard(lanternResource: .pearls, food: 0, iron: 0, pearls: 0, coins: 4, seals: 2, any: 2, decree: 0),
+        StartResourceCard(lanternResource: .food, food: 1, iron: 0, pearls: 0, coins: 2, seals: 2, any: 1, decree: 1)
     ]
     
     let startActionCards = [ // 6 in total

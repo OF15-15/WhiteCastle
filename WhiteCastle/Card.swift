@@ -43,9 +43,9 @@ class StartActionCard: Card {
 }
 
 class StartResourceCard: Card {
-    var food, iron, pearls, coins, seals: Int
+    var food, iron, pearls, coins, seals, any, decree: Int
     
-    convenience init(lanternResource: Resource, food: Int, iron: Int, pearls: Int, coins: Int, seals: Int) {
+    convenience init(lanternResource: Resource, food: Int, iron: Int, pearls: Int, coins: Int, seals: Int, any: Int, decree: Int) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainResources(type: lanternResource, amount: 1)
         }
@@ -56,7 +56,8 @@ class StartResourceCard: Card {
         self.pearls = pearls
         self.coins = coins
         self.seals = seals
-        
+        self.any = any
+        self.decree = decree
     }
     
     convenience init() {
@@ -69,6 +70,8 @@ class StartResourceCard: Card {
         self.pearls = 0
         self.coins = 0
         self.seals = 0
+        self.any = 0
+        self.decree = 0
         
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
     }
