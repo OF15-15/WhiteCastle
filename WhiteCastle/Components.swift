@@ -33,4 +33,9 @@ struct ActionCards {
                     middle: GainAction(.influence, 1),
                     bottom: GainAction(.iron, 2))
     ]
+    
+    let diplomatCards = [ // 12 in total
+        DiplomatCard(top: YardAction(), bottom: GainAction(.any, 3), bottomTwo: true),
+        DiplomatCard(top: TwoAction(GainAction(.influence, 1), LanternAction()), bottom: GardenAction(), bottomTwo: false)
+    ]
 }

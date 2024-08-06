@@ -91,11 +91,16 @@ class StewardCard: Card {
 }
 
 class DiplomatCard: Card {
-    convenience init(top: Action, middle: Action, bottom: Action) {
+    convenience init(top: Action, bottom: Action, bottomTwo: Bool) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainPoints(1)
         }
-        self.init(cardType: .diplomat, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
+        if bottomTwo {
+            self.init(cardType: .diplomat, top: top, middle: bottom, bottom: bottom, lantern: lanternClosure)
+        }
+        else {
+            self.init(cardType: .diplomat, top: top, middle: top, bottom: bottom, lantern: lanternClosure)
+        }
     }
         
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
