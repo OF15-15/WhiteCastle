@@ -57,7 +57,7 @@ class StartRessourceCard: Card {
 }
 
 class FirstLevelCard: Card {
-    convenience override init(top: Action, middle: Action, bottom: Action) {
+    convenience init(top: Action, middle: Action, bottom: Action) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainCoins(1)
         }
@@ -70,7 +70,7 @@ class FirstLevelCard: Card {
 }
 
 class SecondLevelCard: Card {
-    convenience override init(top: Action, middle: Action, bottom: Action) {
+    convenience init(top: Action, middle: Action, bottom: Action) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainPoints(1)
         }
