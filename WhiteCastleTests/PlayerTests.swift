@@ -9,7 +9,7 @@ import Testing
 @testable import WhiteCastle
 
 struct PlayerTests {
-
+    
     @Suite struct ResourceTests {
         let standardStartResourceCard = StartResourceCard()
         
@@ -48,20 +48,34 @@ struct PlayerTests {
             
             #expect(p.gainInfluence(7))
             #expect(p.influence == 5)
-            _ = p.gainSeals(2)
-            _ = p.gainInfluence(4)
+            p.gainSeals(2)
+            p.gainInfluence(4)
             #expect(p.influence == 9)
             #expect(p.seals == 1)
             
-            _ = p.gainInfluence(9)
+            p.gainInfluence(9)
             #expect(p.influence == 10)
-            _ = p.gainSeals(5)
-            _ = p.gainInfluence(200)
+            p.gainSeals(5)
+            p.gainInfluence(200)
             
             #expect(p.seals == 0)
             #expect(p.influence == 20)
         }
-        
-          
+    }
+    
+    @Suite struct StartResourceTests {
+        @Test func standardStartResourceCard() {
+            let src = StartResourceCard(lanternResource: .food, food: 2, iron: 1, pearls: 3, coins: 2, seals: 1)
+            let p = Player(startResourceCard: src)
+            #expect(p.food == 2)
+            #expect(p.iron == 1)
+            #expect(p.pearls == 3)
+            #expect(p.coins == 2)
+            #expect(p.seals == 1)
+            
+            #expect(p.lanternCards[0] === src)
+            p.lantern.run(player: p)
+            #expect(p.food == 3)
+        }
     }
 }
