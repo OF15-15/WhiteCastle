@@ -105,4 +105,8 @@ class Player {
         return true
     }
     
+    func gainPoints(_ amount: Int) -> Bool {
+        self.points += amount
+        return true
+    }
 }

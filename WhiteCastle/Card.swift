@@ -55,3 +55,29 @@ class StartRessourceCard: Card {
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
     }
 }
+
+class FirstLevelCard: Card {
+    convenience override init(top: Action, middle: Action, bottom: Action) {
+        let lanternClosure = { (player: Player) -> Void in
+            player.gainCoins(1)
+        }
+        self.init(cardType: .firstLevel, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
+    }
+        
+    override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
+        super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
+    }
+}
+
+class SecondLevelCard: Card {
+    convenience override init(top: Action, middle: Action, bottom: Action) {
+        let lanternClosure = { (player: Player) -> Void in
+            player.gainPoints(1)
+        }
+        self.init(cardType: .firstLevel, top: top, middle: middle, bottom: bottom, lantern: lanternClosure)
+    }
+        
+    override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {
+        super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
+    }
+}
