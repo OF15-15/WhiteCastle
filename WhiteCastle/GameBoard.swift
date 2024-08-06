@@ -16,9 +16,8 @@ struct GameBoard {
     var diplomatCards: [DiplomatCard]
     var stewardCards: [StewardCard]
     
-    var castleFirstLeft, castleFirstMiddle, castleFirstRight: CastleRoom
-    var castleSecondLeft, castleSecondRight: CastleRoom
-    var castleThird: CastleTop
+    var castleRooms: [CastleRoom]
+    // TBD daimyo var castleThird: CastleTop
     
     var trainingYard5, trainingYard3, trainingYard1: TrainingYard
     
@@ -35,6 +34,23 @@ struct GameBoard {
         
         // put a card in each of the open slots
         // top castle card
+        
+        var diceTiles = comps.DiceTiles.shuffled()
+        
+        var oneOfEach: [DiceTile] = []
+        var i = 0
+        outerloop: while oneOfEach.count < 3 {
+            let dt = diceTiles[0]
+            for elem in oneOfEach {
+                if dt.color != elem.color {
+                    continue outerloop
+                }
+            }
+            oneOfEach.append(diceTiles.remove(at: i))
+        }
+        
+        
+        
         
         // all three colors in top spot, first level
         // in number order: rest of dice tiles

@@ -38,4 +38,22 @@ struct Components {
         DiplomatCard(top: YardAction(), bottom: GainAction(.any, 3), bottomTwo: true),
         DiplomatCard(top: TwoAction(GainAction(.influence, 1), LanternAction()), bottom: GardenAction(), bottomTwo: false)
     ]
+    
+    let DiceTiles = [
+        DiceTile(.white, .food)
+        DiceTile(.white, .iron),
+        DiceTile(.white, .pearls),
+        DiceTile(.white, .any),
+        DiceTile(.white, .coins),
+        DiceTile(.black, .food),
+        DiceTile(.black, .iron),
+        DiceTile(.black, .pearls),
+        DiceTile(.black, .any),
+        DiceTile(.black, .coins),
+        DiceTile(.white, .food),
+        DiceTile(.white, .iron),
+        DiceTile(.white, .pearls),
+        DiceTile(.white, .any),
+        DiceTile(.white, .coins)
+    ]
 }
