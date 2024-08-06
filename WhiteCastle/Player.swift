@@ -16,7 +16,7 @@ class Player {
     var lantern: LanternAction
     var lanternCards: [Card]
     
-    init(startResourceCard: StartRessourceCard) {
+    init(startResourceCard: StartResourceCard) {
         food = startResourceCard.food
         iron = startResourceCard.iron
         pearls = startResourceCard.pearls
@@ -32,7 +32,7 @@ class Player {
     
     
     
-    @discardableResult func gainResources(type: Ressource, amount: Int) -> Bool {
+    @discardableResult func gainResources(type: Resource, amount: Int) -> Bool {
         switch type {
         case .food: return gainFood(amount)
         case .iron: return gainIron(amount)

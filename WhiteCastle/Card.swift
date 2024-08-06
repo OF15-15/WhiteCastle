@@ -7,7 +7,7 @@
 
 enum CardType {
     case startAction
-    case startRessource
+    case startResource
     case firstLevel
     case secondLevel
 }
@@ -42,14 +42,14 @@ class StartActionCard: Card {
     }
 }
 
-class StartRessourceCard: Card {
+class StartResourceCard: Card {
     var food, iron, pearls, coins, seals: Int
     
-    convenience init(lanternResource: Ressource, food: Int, iron: Int, pearls: Int, coins: Int, seals: Int) {
+    convenience init(lanternResource: Resource, food: Int, iron: Int, pearls: Int, coins: Int, seals: Int) {
         let lanternClosure = { (player: Player) -> Void in
             player.gainResources(type: lanternResource, amount: 1)
         }
-        self.init(cardType: .startRessource, top: Action(), middle: Action(), bottom: Action(), lantern: lanternClosure)
+        self.init(cardType: .startResource, top: Action(), middle: Action(), bottom: Action(), lantern: lanternClosure)
         
         self.food = food
         self.iron = iron
@@ -60,7 +60,7 @@ class StartRessourceCard: Card {
     }
     
     convenience init() {
-        self.init(cardType: .startRessource, top: Action(), middle: Action(), bottom: Action(), lantern: { (player: Player) -> Void in })
+        self.init(cardType: .startResource, top: Action(), middle: Action(), bottom: Action(), lantern: { (player: Player) -> Void in })
     }
     
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: @escaping (Player) -> Void) {

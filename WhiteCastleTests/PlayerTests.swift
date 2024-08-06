@@ -10,8 +10,8 @@ import Testing
 
 struct PlayerTests {
 
-    @Suite struct RessourceTests {
-        let standardStartResourceCard = StartRessourceCard()
+    @Suite struct ResourceTests {
+        let standardStartResourceCard = StartResourceCard()
         
         @Test func testUpperLimits() {
             let p = Player(startResourceCard: standardStartResourceCard)

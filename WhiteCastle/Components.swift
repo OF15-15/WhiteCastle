@@ -18,7 +18,7 @@ enum StartActionCar {
     case trainingYards
 }
 
-enum Ressource {
+enum Resource {
     case food
     case iron
     case pearls
