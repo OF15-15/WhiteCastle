@@ -5,7 +5,7 @@
 //  Created by Ich on 05.08.24.
 //
 
-struct ActionCards {
+struct Components {
     let startResourceCards = [ // should be 9 in total
         StartResourceCard(lanternResource: .iron, food: 0, iron: 1, pearls: 2, coins: 4, seals: 0, any: 0, decree: 2),
         StartResourceCard(lanternResource: .food, food: 4, iron: 2, pearls: 0, coins: 3, seals: 2, any: 0, decree: 0),

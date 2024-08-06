@@ -8,22 +8,31 @@
 import Foundation
 
 struct GameBoard {
-    let gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
-    let gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
+    var gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
+    var gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
     
-    let wellTop, wellBottom: Resource
+    var wellTop, wellBottom: Resource
     
-    let castleFirstLeft, castleFirstMiddle, castleFirstRight: CastleRoom
-    let castleSecondLeft, castleSecondRight: CastleRoom
-    let castleThird: CastleTop
+    var diplomatCards: [DiplomatCard]
+    var stewardCards: [StewardCard]
     
-    let trainingYard5, trainingYard3, trainingYard1: TrainingYard
+    var castleFirstLeft, castleFirstMiddle, castleFirstRight: CastleRoom
+    var castleSecondLeft, castleSecondRight: CastleRoom
+    var castleThird: CastleTop
     
+    var trainingYard5, trainingYard3, trainingYard1: TrainingYard
     
+    var players: [Player]
     init() {
+        var comps = Components()
         // setup guide
         
         // shuffle first / second level cards
+        var startActionCards = comps.startActionCards.shuffled()
+        var startResourceCards = comps.startResourceCards.shuffled()
+        stewardCards = comps.stewardCards.shuffled()
+        diplomatCards = comps.diplomatCards.shuffled()
+        
         // put a card in each of the open slots
         // top castle card
         
