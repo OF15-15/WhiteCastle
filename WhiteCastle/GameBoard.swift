@@ -19,7 +19,7 @@ struct GameBoard {
     var castleRooms: [CastleRoom]
     // TBD daimyo var castleThird: CastleTop
     
-    var trainingYardFive, trainingYardThree, trainingYardOne: YardAction
+    var trainingYardFive, trainingYardThree, trainingYardOne: Action
     
     // var players: [Player]
     
