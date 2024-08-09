@@ -7,10 +7,15 @@
 
 struct Components {
     let startResourceCards = [ // should be 9 in total
+        StartResourceCard(lanternResource: .iron, food: 0, iron: 0, pearls: 0, coins: 4, seals: 1, any: 3, decree: 0),
+        StartResourceCard(lanternResource: .iron, food: 1, iron: 2, pearls: 1, coins: 3, seals: 1, any: 0, decree: 0),
         StartResourceCard(lanternResource: .iron, food: 0, iron: 1, pearls: 2, coins: 4, seals: 0, any: 0, decree: 2),
-        StartResourceCard(lanternResource: .food, food: 4, iron: 2, pearls: 0, coins: 3, seals: 2, any: 0, decree: 0),
+        StartResourceCard(lanternResource: .pearls, food: 0, iron: 2, pearls: 1, coins: 5, seals: 1, any: 0, decree: 0),
         StartResourceCard(lanternResource: .pearls, food: 0, iron: 0, pearls: 0, coins: 4, seals: 2, any: 2, decree: 0),
-        StartResourceCard(lanternResource: .food, food: 1, iron: 0, pearls: 0, coins: 2, seals: 2, any: 1, decree: 1)
+        StartResourceCard(lanternResource: .pearls, food: 2, iron: 1, pearls: 0, coins: 2, seals: 1, any: 0, decree: 1),
+        StartResourceCard(lanternResource: .food, food: 2, iron: 2, pearls: 1, coins: 4, seals: 1, any: 0, decree: 0),
+        StartResourceCard(lanternResource: .food, food: 4, iron: 2, pearls: 0, coins: 3, seals: 2, any: 0, decree: 0),
+        StartResourceCard(lanternResource: .food, food: 0, iron: 0, pearls: 0, coins: 2, seals: 2, any: 1, decree: 3)
     ]
     
     let startActionCards = [ // 6 in total
