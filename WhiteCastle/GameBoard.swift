@@ -21,7 +21,7 @@ struct GameBoard {
     
     var trainingYardFive, trainingYardThree, trainingYardOne: Action
     
-    // var players: [Player]
+    var players: [Player]
     
     
     init() {
@@ -106,5 +106,6 @@ struct GameBoard {
         // random src (p+1) add sac below each
         // in opposite order: choos one pair
         // decree card
+        players = [Player(startResourceCard: comps.startResourceCards[0], startActionCard: comps.startActionCards[0])]
     }
 }
