@@ -14,7 +14,8 @@ struct PlayView: View {
         var player = gameBoard.players[0]
         VStack {
             ResourceView(player: player)
-            // DiceView()
+            DiceView(gameBoard: gameBoard)
+                .frame(height: UIScreen.main.bounds.width/7)
             
             ScrollView() {
                 

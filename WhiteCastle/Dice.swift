@@ -7,7 +7,7 @@
 import Foundation
 
 
-struct Dice: Identifiable {
+struct Dice: Identifiable, Comparable {
     let id = UUID()
     let color: DColor
     let value: Int
@@ -20,6 +20,16 @@ struct Dice: Identifiable {
     init(_ color: DColor) {
         self.color = color
         self.value = Int.random(in: 1...6)
+    }
+    
+    static func <(lhs: Dice, rhs: Dice) -> Bool {
+        return lhs.value < rhs.value
+    }
+    static func >(lhs: Dice, rhs: Dice) -> Bool {
+        return lhs.value > rhs.value
+    }
+    static func ==(lhs: Dice, rhs: Dice) -> Bool {
+        return lhs.value == rhs.value
     }
     
 }
@@ -37,6 +47,7 @@ struct Bridge {
         for _ in 1...count {
             dices.append(Dice(color))
         }
+        dices.sort()
         left = dices.first
         right = dices.last
     }
