@@ -23,6 +23,9 @@ struct GameBoard {
     
     var players: [Player]
     
+    var redBridge, blackBridge, whiteBridge: Bridge
+    var bridges: [Bridge]
+    
     
     init() {
         var comps = Components()
@@ -101,6 +104,10 @@ struct GameBoard {
         
         
         // bridges / rounds / players
+        redBridge = Bridge(color: .red, count: 5)
+        blackBridge = Bridge(color: .black, count: 5)
+        whiteBridge = Bridge(color: .white, count: 5)
+        bridges = [redBridge, blackBridge, whiteBridge]
                 
         // turn order
         // random src (p+1) add sac below each

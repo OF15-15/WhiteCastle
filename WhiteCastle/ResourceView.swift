@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ResourceView: View {
+    var player: Player
+    
     var body: some View {
-        let gb = GameBoard()
-        let p = gb.players[0]
         HStack {
             VStack {
                 Image("food")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                Text(String(p.food))
+                Text(String(player.food))
                     .font(.largeTitle)
             }
             VStack {
@@ -24,28 +24,28 @@ struct ResourceView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                Text(String(p.iron))
+                Text(String(player.iron))
                     .font(.largeTitle)
             }
             VStack {
                 Image("pearls")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                Text(String(p.pearls))
+                Text(String(player.pearls))
                     .font(.largeTitle)
             }
             VStack {
                 Image("coins")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                Text(String(p.coins))
+                Text(String(player.coins))
                     .font(.largeTitle)
             }
             VStack {
                 Image("seals")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                Text(String(p.seals))
+                Text(String(player.seals))
                     .font(.largeTitle)
             }
         }
@@ -54,5 +54,7 @@ struct ResourceView: View {
 }
 
 #Preview {
-    ResourceView()
+    let gb = GameBoard()
+    let p = gb.players[0]
+    ResourceView(player: p)
 }

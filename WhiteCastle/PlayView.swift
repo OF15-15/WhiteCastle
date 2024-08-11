@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct PlayView: View {
+    var gameBoard = GameBoard()
+
     var body: some View {
+        var player = gameBoard.players[0]
         VStack {
-            ResourceView()
+            ResourceView(player: player)
             // DiceView()
             
             ScrollView() {

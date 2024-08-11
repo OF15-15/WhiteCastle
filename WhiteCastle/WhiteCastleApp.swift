@@ -11,7 +11,7 @@ import SwiftUI
 struct WhiteCastleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlayView()
         }
     }
 }
