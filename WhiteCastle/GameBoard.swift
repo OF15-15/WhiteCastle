@@ -28,7 +28,7 @@ struct GameBoard {
     
     
     init() {
-        var comps = Components()
+        let comps = Components()
         // setup guide
         
         // shuffle first / second level cards

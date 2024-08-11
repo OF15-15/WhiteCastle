@@ -1,17 +1,10 @@
 //
-//  StandardValues.swift
+//  Resource.swift
 //  WhiteCastle
 //
 //  Created by Ich on 06.08.24.
 //
 
-enum DColor: String, CaseIterable, Identifiable {
-    case red
-    case black
-    case white
-    case all
-    var id: String { self.rawValue }
-}
 
 enum Resource {
     case food

@@ -1,5 +1,5 @@
 //
-//  GameBoardComponents.swift
+//  Garden.swift
 //  WhiteCastle
 //
 //  Created by Ich on 06.08.24.
