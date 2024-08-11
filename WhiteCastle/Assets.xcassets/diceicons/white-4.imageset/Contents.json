@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "dice-six-faces-four.png",
+      "filename" : "white-4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,6 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "filename" : "dice-six-faces-four.svg",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "unassigned" : true
     }
   ],
   "info" : {
