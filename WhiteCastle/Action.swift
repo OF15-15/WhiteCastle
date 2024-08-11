@@ -8,56 +8,34 @@
 import Foundation
 
 class Action{
-    var diceColor: DColor = .all
-    var actionValue: Int = 6
-    
-    init() { }
-    
-    init(diceColor dCol: DColor, actionValue actVal: Int) {
-        diceColor = dCol
-        actionValue = actVal
+    func run(_ player: Player, _ gameBoard: GameBoard) {
+        
     }
     
-    
-    @discardableResult func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool{
-        if 0 < diceValue && diceValue <= 6 {
-            let poss = player.gainCoins(actionValue - diceValue)
-            return poss
-        }
+    func possible(_ player: Player) -> Bool {
         return true
     }
 }
 
 class WellAction: Action {
-    
-    override init() {
-        super.init(diceColor: .all, actionValue: 1)
-    }
-    
-    @discardableResult override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
-        super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
+    override func run(_ player: Player, _ gameBoard: GameBoard) {
+        super.run(player, gameBoard)
         player.gainSeals(1)
         
         player.gainResources(type: gameBoard.wellTop, amount: 1)
         player.gainResources(type: gameBoard.wellBottom, amount: 1)
-        return true
     }
 }
 
 class PlayerBoardAction: Action {
-    convenience init(diceColor dCol: DColor) {
-        self.init(diceColor: dCol, actionValue: 6)
-    }
-    override init(diceColor dCol: DColor, actionValue actVal: Int) {
-        super.init(diceColor: dCol, actionValue: actVal)
+    let color: DColor
+    
+    init(color: DColor) {
+        self.color = color
     }
     
-    @discardableResult override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
-        if !super.run(player: player, gameBoard: gameBoard, diceValue: diceValue) {
-            return false
-        }
-        
-        switch self.diceColor {
+    override func run(_ player: Player, _ gameBoard: GameBoard) {
+        switch self.color {
         case .red:
             let bonuses = 1...(5-player.courtiers)
             for bonus in bonuses {
@@ -80,7 +58,7 @@ class PlayerBoardAction: Action {
                 case 0, 1, 2, 4:
                     player.gainIron(1)
                 case 3:
-                    player.lantern.run(player: player)
+                    player.lantern.run(player, gameBoard)
                 case 5:
                     player.gainCoins(2)
                 default:
@@ -98,7 +76,7 @@ class PlayerBoardAction: Action {
                 case 3:
                     player.gainSeals(1)
                 case 5:
-                    player.lantern.run(player: player)
+                    player.lantern.run(player, gameBoard)
                 default:
                     raise(43)
                 }
@@ -107,16 +85,14 @@ class PlayerBoardAction: Action {
         case .all:
             raise(42)
         }
-        return true
     }
 }
 
 class LanternAction: Action {
-    @discardableResult func run(player: Player) -> Bool {
+    override func run(_ player: Player, _ gameBoard: GameBoard) {
         for lanternCard in player.lanternCards {
             lanternCard.lantern(player)
         }
-        return true
     }
 }
 
@@ -127,13 +103,10 @@ class GainAction: Action {
     init(_ resource: Resource, _ amount: Int) {
         self.amount = amount
         self.resource = resource
-        super.init()
     }
     
-    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
-        let a = super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
-        let b = player.gainResources(type: resource, amount: amount)
-        return a && b
+    override func run(_ player: Player, _ gameBoard: GameBoard) {
+        player.gainResources(type: resource, amount: amount)
     }
 }
 
@@ -156,15 +129,59 @@ class TwoAction: Action {
     init(_ firstAction: Action, _ secondAction: Action) {
         self.firstAction = firstAction
         self.secondAction = secondAction
-        
-        super.init(diceColor: firstAction.diceColor, actionValue: firstAction.actionValue)
     }
     
-    override func run(player: Player, gameBoard: GameBoard, diceValue: Int) -> Bool {
-        let a = super.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
-        let b = firstAction.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
-        let c = secondAction.run(player: player, gameBoard: gameBoard, diceValue: diceValue)
-        return a && b && c
+    override func run(_ player: Player, _ gameBoard: GameBoard) {
+        firstAction.run(player, gameBoard)
+        secondAction.run(player, gameBoard)
     }
     
+}
+
+class PayAction: Action {
+    var amount: Int
+    var resource: Resource
+    var action: Action
+    
+    init(amount: Int, resource: Resource, action: Action) {
+        self.amount = amount
+        self.resource = resource
+        self.action = action
+        super.init()
+    }
+    
+    override func run(_ player: Player, _ gameBoard: GameBoard) {
+        if player.gainResources(type: resource, amount: amount) {
+            action.run(player, gameBoard)
+        }
+    }
+    
+    override func possible(_ player: Player) -> Bool {
+        if player.gainResources(type: resource, amount: -amount) {
+            player.gainResources(type: resource, amount: amount)
+            return true
+        }
+        return false
+    }
+    
+    
+}
+
+class DiceAction: PayAction {
+    let actionValue: Int
+    
+    init(actionValue: Int, color: DColor, action: Action) {
+        self.actionValue = actionValue
+        super.init(amount: 100, resource: .coins, action: action)
+    }
+    
+    func run(_ player: Player, _ gameBoard: GameBoard, dice: Dice) {
+        amount = actionValue-dice.value
+        super.run(player, gameBoard)
+    }
+    
+    func possible(_ player: Player, dice: Dice) -> Bool {
+        amount = actionValue-dice.value
+        return super.possible(player)
+    }
 }
