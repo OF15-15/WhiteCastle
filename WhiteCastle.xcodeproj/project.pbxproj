@@ -15,6 +15,7 @@
 		540FCA0B2C6373B9005CFF4E /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540FCA0A2C6373B9005CFF4E /* ResourceView.swift */; };
 		541FCBC62C66A67900DD1695 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBC52C66A67700DD1695 /* Dice.swift */; };
 		541FCBC82C66AD8A00DD1695 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBC72C66AD8A00DD1695 /* DiceView.swift */; };
+		541FCBCC2C68F33300DD1695 /* SingleDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBCB2C68F33300DD1695 /* SingleDiceView.swift */; };
 		545BBC3A2C61652D00B8FB80 /* WhiteCastleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */; };
 		545BBC3C2C61652D00B8FB80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC3B2C61652D00B8FB80 /* ContentView.swift */; };
 		545BBC3E2C61652E00B8FB80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545BBC3D2C61652E00B8FB80 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		540FCA0A2C6373B9005CFF4E /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		541FCBC52C66A67700DD1695 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		541FCBC72C66AD8A00DD1695 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		541FCBCB2C68F33300DD1695 /* SingleDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDiceView.swift; sourceTree = "<group>"; };
 		545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleApp.swift; sourceTree = "<group>"; };
 		545BBC3B2C61652D00B8FB80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		545BBC3D2C61652E00B8FB80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				540FCA022C62D1FA005CFF4E /* YardTile.swift */,
 				540FCA002C62BD7D005CFF4E /* CastleRoom.swift */,
 				540FC9FE2C62B540005CFF4E /* DiceTile.swift */,
+				541FCBCB2C68F33300DD1695 /* SingleDiceView.swift */,
 				540FC9FC2C62A109005CFF4E /* StandardValues.swift */,
 				545BBC392C61652D00B8FB80 /* WhiteCastleApp.swift */,
 				545BBC652C616B7F00B8FB80 /* GameBoard.swift */,
@@ -302,6 +305,7 @@
 				545BBC682C616C8200B8FB80 /* Action.swift in Sources */,
 				545BBC732C623DC100B8FB80 /* Card.swift in Sources */,
 				540FCA092C6370A8005CFF4E /* PlayView.swift in Sources */,
+				541FCBCC2C68F33300DD1695 /* SingleDiceView.swift in Sources */,
 				545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */,
 				541FCBC62C66A67900DD1695 /* Dice.swift in Sources */,
 				540FCA012C62BD82005CFF4E /* CastleRoom.swift in Sources */,

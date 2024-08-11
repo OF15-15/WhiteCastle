@@ -5,7 +5,7 @@
 //  Created by Ich on 06.08.24.
 //
 
-enum DColor {
+enum DColor: String {
     case red
     case black
     case white

@@ -13,7 +13,7 @@ struct DiceView: View {
     
     var body: some View {
         HStack {
-            ForEach(gameBoard.redBridge.dices) { dice in
+            ForEach(gameBoard.whiteBridge.dices) { dice in
                 SingleDiceView(dice: dice)
             }
         }
