@@ -18,12 +18,14 @@ struct Bridge {
             dices.append(Dice(color))
         }
         dices.sort()
-        left = dices.first
-        right = dices.last
+        if dices.count > 0 {
+            left = dices.removeFirst()
+        }
+        right = dices.popLast()
     }
     
-    mutating func popLeft() -> Dice {
-        let l = dices.removeFirst()
+    mutating func popLeft() -> Dice? {
+        let l = left
         if dices.count > 0 {
             left = dices[0]
         }
@@ -33,14 +35,9 @@ struct Bridge {
         return l
     }
     
-    mutating func popRight() -> Dice {
-        let r = dices.removeLast()
-        if dices.count > 0 {
-            right = dices[-1]
-        }
-        else {
-            right = nil
-        }
+    mutating func popRight() -> Dice? {
+        let r = right
+        right = dices.popLast()
         return r
         
     }

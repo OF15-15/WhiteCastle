@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameBoard {
+struct GameBoard: Codable {
     // var gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
     // var gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
     
@@ -26,8 +26,12 @@ struct GameBoard {
     var redBridge, blackBridge, whiteBridge: Bridge
     var bridges: [Bridge]
     
-    
     init() {
+        self.init(playerCount: 4)
+    }
+    
+    
+    init(playerCount: Int) {
         let comps = Components()
         // setup guide
         
@@ -42,45 +46,35 @@ struct GameBoard {
         
         castleRooms = []
         
-        var diceTiles = comps.diceTiles.shuffled()
+        var redDiceTiles = comps.redDiceTiles.shuffled()
+        var blackDiceTiles = comps.blackDiceTiles.shuffled()
+        var whiteDiceTiles = comps.whiteDiceTiles.shuffled()
         
-        var oneOfEach: [DiceTile] = []
-        for i in 1...diceTiles.count {
-            if diceTiles[i].color == .red {
-                oneOfEach.append(diceTiles.remove(at: i))
-                break
-            }
-        }
-        for i in 1...diceTiles.count {
-            if diceTiles[i].color == .black {
-                oneOfEach.append(diceTiles.remove(at: i))
-                break
-            }
-        }
-        for i in 1...diceTiles.count {
-            if diceTiles[i].color == .white {
-                oneOfEach.append(diceTiles.remove(at: i))
-                break
-            }
-        }
-        
+        var firstThreeDiceTiles = [redDiceTiles.removeLast(), blackDiceTiles.removeLast(), whiteDiceTiles.removeLast()]
+        var diceTiles = redDiceTiles + blackDiceTiles + whiteDiceTiles
+        diceTiles.shuffle()
         
         for _ in 1...3 {
-            var lastDT = 1
-            if oneOfEach.last!.color == diceTiles.first!.color {
-                while diceTiles.first!.color == diceTiles[lastDT].color {
+            var lastDT = 0
+            if firstThreeDiceTiles.last!.color == diceTiles.last!.color {
+                while diceTiles.last!.color == diceTiles[lastDT].color {
                     lastDT += 1
                 }
             }
-            castleRooms.append(CastleRoom(card: stewardCards.popLast()!, level: .first, diceTiles: [oneOfEach.popLast()!, diceTiles.removeFirst(), diceTiles.remove(at: lastDT)]))
+            castleRooms.append(FirstLevelCastleRoom(card: stewardCards.removeLast(),
+                                                    topTile: firstThreeDiceTiles.removeLast(),
+                                                    middleTile: diceTiles.removeLast(),
+                                                    bottomTile: diceTiles.remove(at: lastDT)))
         }
         
         for _ in 1...2 {
             var lastDT = 1
-            while diceTiles.first!.color == diceTiles[lastDT].color {
+            while diceTiles.last!.color == diceTiles[lastDT].color {
                 lastDT += 1
             }
-            castleRooms.append(CastleRoom(card: diplomatCards.popLast()!, level: .second, diceTiles: [diceTiles.removeFirst(), diceTiles.remove(at: lastDT)]))
+            castleRooms.append(SecondLevelCastleRoom(card: diplomatCards.removeLast(),
+                                                    topTile: diceTiles.removeLast(),
+                                                    bottomTile: diceTiles.remove(at: lastDT)))
         }
         
         wellTop = diceTiles[0].resource
@@ -100,7 +94,7 @@ struct GameBoard {
         
         trainingYardOne = yardTiles[0].yellow
         trainingYardThree = yardTiles[1].blue
-        trainingYardFive = TwoAction(yardTiles[2].yellow, yardTiles[0].blue)
+        trainingYardFive = TwoAction(yardTiles[2].yellow, yardTiles[3].blue)
         
         
         // bridges / rounds / players
@@ -111,7 +105,7 @@ struct GameBoard {
                 
         // turn order
         // random src (p+1) add sac below each
-        // in opposite order: choos one pair
+        // in opposite order: choose one pair
         // decree card
         players = [Player(startResourceCard: comps.startResourceCards[0], startActionCard: comps.startActionCards[0])]
     }

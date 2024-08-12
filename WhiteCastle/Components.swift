@@ -44,17 +44,21 @@ struct Components {
         DiplomatCard(top: TwoAction(GainAction(.influence, 1), LanternAction()), bottom: GardenAction(), bottomTwo: false)
     ]
     
-    let diceTiles = [
+    let redDiceTiles = [
         DiceTile(.red, .food),
         DiceTile(.red, .iron),
         DiceTile(.red, .pearls),
         DiceTile(.red, .any),
-        DiceTile(.red, .coins),
+        DiceTile(.red, .coins)
+        ]
+    let blackDiceTiles = [
         DiceTile(.black, .food),
         DiceTile(.black, .iron),
         DiceTile(.black, .pearls),
         DiceTile(.black, .any),
-        DiceTile(.black, .coins),
+        DiceTile(.black, .coins)
+        ]
+    let whiteDiceTiles = [
         DiceTile(.white, .food),
         DiceTile(.white, .iron),
         DiceTile(.white, .pearls),
