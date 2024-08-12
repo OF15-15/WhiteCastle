@@ -11,3 +11,5 @@ The different components can be found here: https://devir.world/thewhitecastle/c
 
 ## Disclaimer
 This project is not associated or endorsed with Devir Games, Europe Masters or any other company involved
+
+icons by https://game-icons.net
