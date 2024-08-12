@@ -5,12 +5,12 @@
 //  Created by Ich on 06.08.24.
 //
 
-enum Level {
+enum Level: Codable {
     case first
     case second
 }
 
-class CastleRoom {
+class CastleRoom: Codable {
     var card: Card
     var level: Level
     

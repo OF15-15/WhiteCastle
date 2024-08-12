@@ -6,7 +6,7 @@
 //
 
 
-enum Resource {
+enum Resource: Codable {
     case food
     case iron
     case pearls

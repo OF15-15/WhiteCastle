@@ -7,8 +7,8 @@
 import Foundation
 
 
-struct Dice: Identifiable, Comparable {
-    let id = UUID()
+struct Dice: Identifiable, Comparable, Codable {
+    var id = UUID()
     let color: DColor
     let value: Int
     

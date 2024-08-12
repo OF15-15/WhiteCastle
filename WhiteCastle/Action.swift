@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Action{
+class Action: Codable {
     func run(_ player: Player, _ gameBoard: GameBoard) {
         
     }

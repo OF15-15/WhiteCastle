@@ -5,7 +5,7 @@
 //  Created by Ich on 11.08.24.
 //
 
-struct Bridge {
+struct Bridge: Codable {
     let color: DColor
     var dices: [Dice]
     var left: Dice?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Player {
+class Player: Codable {
     var food, iron, pearls: Int
     var coins, seals, influence: Int
     var gardeners, courtiers, warriors: Int
