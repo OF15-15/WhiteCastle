@@ -34,6 +34,14 @@ class PlayerBoardAction: Action {
         self.color = color
     }
     
+    private enum CodingKeys: String, CodingKey {
+        case color
+    }
+    
+    required init(from decoder: Decoder) throws {
+        color = try decoder.container(keyedBy: CodingKeys.self).decode(DColor.self, forKey: .color)
+    }
+    
     override func run(_ player: Player, _ gameBoard: GameBoard) {
         switch self.color {
         case .red:
@@ -103,6 +111,17 @@ class GainAction: Action {
     init(_ resource: Resource, _ amount: Int) {
         self.amount = amount
         self.resource = resource
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case resource
+        case amount
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        resource = try values.decode(Resource.self, forKey: .resource)
+        amount = try values.decode(Int.self, forKey: .amount)
     }
     
     override func run(_ player: Player, _ gameBoard: GameBoard) {
