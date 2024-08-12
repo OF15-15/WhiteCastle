@@ -91,7 +91,7 @@ class PlayerBoardAction: Action {
 class LanternAction: Action {
     override func run(_ player: Player, _ gameBoard: GameBoard) {
         for lanternCard in player.lanternCards {
-            lanternCard.lantern(player)
+            lanternCard.lantern.run(player, gameBoard)
         }
     }
 }
