@@ -10,7 +10,7 @@ enum Level: Codable {
     case second
 }
 
-class CastleRoom {
+class CastleRoom: Codable {
     var card: Card
     var level: Level
     
@@ -21,6 +21,19 @@ class CastleRoom {
         self.level = level
         self.actions = []
     }
+    
+    enum CodingKeys: String, CodingKey {
+            case card
+            case level
+            case actions
+        }
+        
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            card = try container.decode(Card.self, forKey: .card)
+            level = try container.decode(Level.self, forKey: .level)
+            actions = try container.decode([Action].self, forKey: .actions)
+        }
     
 }
 
@@ -34,6 +47,9 @@ class FirstLevelCastleRoom: CastleRoom {
             DiceAction(actionValue: 3, color: bottomTile.color, action: card.bottom)
         ]
     }
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
+    }
 }
 
 class SecondLevelCastleRoom: CastleRoom {
@@ -43,5 +59,8 @@ class SecondLevelCastleRoom: CastleRoom {
             DiceAction(actionValue: 4, color: topTile.color, action: card.top),
             DiceAction(actionValue: 4, color: bottomTile.color, action: card.bottom)
         ]
+    }
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
 }

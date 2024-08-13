@@ -48,7 +48,7 @@ struct LoginView: View {
             .padding(20)
         }
         else {
-            GamesView()
+            GamesView(user: user)
         }
     }
 }

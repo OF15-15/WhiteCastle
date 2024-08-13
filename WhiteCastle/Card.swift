@@ -5,7 +5,7 @@
 //  Created by Ich on 06.08.24.
 //
 
-enum CardType {
+enum CardType: Codable {
     case startAction
     case startResource
     case steward
@@ -13,7 +13,7 @@ enum CardType {
 }
 
 
-class Card {
+class Card: Codable {
     let cardType: CardType
     let top: Action
     let middle: Action
@@ -36,6 +36,10 @@ class StartActionCard: Card {
     
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: Action) {
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
 }
 
@@ -69,6 +73,27 @@ class StartResourceCard: Card {
         
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
     }
+    enum CodingKeys: String, CodingKey {
+        case food
+        case iron
+        case pearls
+        case coins
+        case seals
+        case any
+        case decree
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        food = try container.decode(Int.self, forKey: .food)
+        iron = try container.decode(Int.self, forKey: .iron)
+        pearls = try container.decode(Int.self, forKey: .pearls)
+        coins = try container.decode(Int.self, forKey: .coins)
+        seals = try container.decode(Int.self, forKey: .seals)
+        any = try container.decode(Int.self, forKey: .any)
+        decree = try container.decode(Int.self, forKey: .decree)
+        try super.init(from: decoder)
+    }
 }
 
 class StewardCard: Card {
@@ -78,6 +103,11 @@ class StewardCard: Card {
         
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: Action) {
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
+    }
+    
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
 }
 
@@ -93,5 +123,10 @@ class DiplomatCard: Card {
         
     override init(cardType: CardType, top: Action, middle: Action, bottom: Action, lantern: Action) {
         super.init(cardType: cardType, top: top, middle: middle, bottom: bottom, lantern: lantern)
+    }
+    
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
 }

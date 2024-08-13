@@ -8,22 +8,48 @@
 import SwiftUI
 
 struct GamesView: View {
-    var openGames: [Game] = []
+    @State var openGames: [Game] = []
+    var user: NetworkUser
+    @State var info = ""
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    Text("Home View")
-                    ForEach(openGames, id: \.id) { game in
-                        NavigationLink(destination: PlayView(game: game)) {
+        VStack {
+            NavigationView {
+                ScrollView {
+                    VStack {
+                        Text("open Games")
+                        ForEach(openGames, id: \.id) { game in
+                            NavigationLink(destination: PlayView(game: game)) {
+                            }
                         }
                     }
                 }
             }
         }
+        
+        Spacer()
+        Button(action: {
+            Task {
+                let newGame = Game()
+                do {
+                    try await user.newGame(newGame)
+                    openGames.append(newGame)
+                    info = ""
+                } catch let e as NetworkError{
+                    print(e)
+                    info = e.rawValue
+                } catch {
+                    print(error)
+                    info = "error"
+                }
+            
+            }
+            
+        }, label: {Text("new Game")})
+        Text(info)
     }
 }
 
 #Preview {
-    GamesView()
+    GamesView(user: NetworkUser())
 }

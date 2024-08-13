@@ -59,8 +59,8 @@ class NetworkUser: Codable {
         
     }
     
-    func getGames() {
-        
+    func newGame(_ game: Game) throws {
+        try print(JSONEncoder().encode(game).base64EncodedString())
     }
     
 }

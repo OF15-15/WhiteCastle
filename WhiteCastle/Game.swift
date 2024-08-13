@@ -7,7 +7,7 @@
 import Foundation
 
 
-struct Game: Identifiable {
+struct Game: Identifiable, Codable {
     var player: Int
     var board: GameBoard
     var id = UUID()
@@ -15,4 +15,10 @@ struct Game: Identifiable {
     func getPlayer() -> Player {
         return board.players[player]
     }
+    
+    init() {
+        board = GameBoard(playerCount: 4)
+        player = Int.random(in: 0..<board.players.count)
+    }
+    
 }

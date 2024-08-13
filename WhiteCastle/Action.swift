@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Action {
+class Action: Codable {
     func run(_ player: Player, _ gameBoard: GameBoard) {
         
     }
@@ -32,6 +32,7 @@ class PlayerBoardAction: Action {
     
     init(color: DColor) {
         self.color = color
+        super.init()
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -39,7 +40,8 @@ class PlayerBoardAction: Action {
     }
     
     required init(from decoder: Decoder) throws {
-        color = try decoder.container(keyedBy: CodingKeys.self).decode(DColor.self, forKey: .color)
+        self.color = try decoder.container(keyedBy: CodingKeys.self).decode(DColor.self, forKey: .color)
+        super.init()
     }
     
     override func run(_ player: Player, _ gameBoard: GameBoard) {
@@ -111,6 +113,7 @@ class GainAction: Action {
     init(_ resource: Resource, _ amount: Int) {
         self.amount = amount
         self.resource = resource
+        super.init()
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -122,6 +125,7 @@ class GainAction: Action {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         resource = try values.decode(Resource.self, forKey: .resource)
         amount = try values.decode(Int.self, forKey: .amount)
+        super.init()
     }
     
     override func run(_ player: Player, _ gameBoard: GameBoard) {
@@ -148,11 +152,24 @@ class TwoAction: Action {
     init(_ firstAction: Action, _ secondAction: Action) {
         self.firstAction = firstAction
         self.secondAction = secondAction
+        super.init()
     }
     
     override func run(_ player: Player, _ gameBoard: GameBoard) {
         firstAction.run(player, gameBoard)
         secondAction.run(player, gameBoard)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case firstAction
+        case secondAction
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        firstAction = try container.decode(Action.self, forKey: .firstAction)
+        secondAction = try container.decode(Action.self, forKey: .secondAction)
+        super.init() // Assuming Action has a default initializer
     }
     
 }
@@ -183,6 +200,20 @@ class PayAction: Action {
         return false
     }
     
+    enum CodingKeys: String, CodingKey {
+            case amount
+            case resource
+            case action
+        }
+        
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.amount = try container.decode(Int.self, forKey: .amount)
+        self.resource = try container.decode(Resource.self, forKey: .resource)
+        self.action = try container.decode(Action.self, forKey: .action)  // Custom decoding logic required here
+        super.init()
+    }
+    
     
 }
 
@@ -202,5 +233,18 @@ class DiceAction: PayAction {
     func possible(_ player: Player, dice: Dice) -> Bool {
         amount = actionValue-dice.value
         return super.possible(player)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case actionValue
+        case action
+        case amount  // Including amount as it's being modified in DiceAction
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.actionValue = try container.decode(Int.self, forKey: .actionValue)
+        let amount = try container.decode(Int.self, forKey: .amount)
+        super.init(amount: amount, resource: .coins, action: try container.decode(Action.self, forKey: .action))
     }
 }

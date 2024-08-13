@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameBoard {
+struct GameBoard: Codable {
     // var gardenPlantRed, gardenPlantBlack, gardenPlantWhite: Garden
     // var gardenStoneRed, gardenStoneBlack, gardenStoneWhite: Garden
     
