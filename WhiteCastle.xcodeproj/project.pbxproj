@@ -14,6 +14,8 @@
 		541FCBC62C66A67900DD1695 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBC52C66A67700DD1695 /* Dice.swift */; };
 		541FCBD22C693CBE00DD1695 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBD12C693CBD00DD1695 /* Bridge.swift */; };
 		541FCBD42C693CEA00DD1695 /* DColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBD32C693CE600DD1695 /* DColor.swift */; };
+		541FCBD82C6B827100DD1695 /* NetworkUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBD72C6B826800DD1695 /* NetworkUser.swift */; };
+		541FCBDC2C6B9B8900DD1695 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FCBDB2C6B9B8500DD1695 /* Game.swift */; };
 		545BBC3E2C61652E00B8FB80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545BBC3D2C61652E00B8FB80 /* Assets.xcassets */; };
 		545BBC412C61652E00B8FB80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545BBC402C61652E00B8FB80 /* Preview Assets.xcassets */; };
 		545BBC4B2C61652E00B8FB80 /* WhiteCastleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */; };
@@ -56,6 +58,8 @@
 		541FCBC52C66A67700DD1695 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		541FCBD12C693CBD00DD1695 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		541FCBD32C693CE600DD1695 /* DColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DColor.swift; sourceTree = "<group>"; };
+		541FCBD72C6B826800DD1695 /* NetworkUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUser.swift; sourceTree = "<group>"; };
+		541FCBDB2C6B9B8500DD1695 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		545BBC3D2C61652E00B8FB80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545BBC402C61652E00B8FB80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		545BBC4A2C61652E00B8FB80 /* WhiteCastleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCastleTests.swift; sourceTree = "<group>"; };
@@ -76,8 +80,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				BridgeDiceView.swift,
-				ContentView.swift,
 				DiceView.swift,
+				GamesView.swift,
+				LoginView.swift,
 				PlayView.swift,
 				ResourceView.swift,
 				SingleDiceView.swift,
@@ -144,9 +149,11 @@
 				545BBC742C625BDD00B8FB80 /* Garden.swift */,
 				545BBC672C616C7C00B8FB80 /* Action.swift */,
 				545BBC722C623DB500B8FB80 /* Card.swift */,
+				541FCBDB2C6B9B8500DD1695 /* Game.swift */,
 				545BBC6D2C6170B700B8FB80 /* Player.swift */,
 				545BBC6B2C616DA300B8FB80 /* Components.swift */,
 				545BBC3D2C61652E00B8FB80 /* Assets.xcassets */,
+				541FCBD72C6B826800DD1695 /* NetworkUser.swift */,
 				545BBC3F2C61652E00B8FB80 /* Preview Content */,
 			);
 			path = WhiteCastle;
@@ -311,6 +318,7 @@
 				540FC9FF2C62B54C005CFF4E /* DiceTile.swift in Sources */,
 				541FCBD42C693CEA00DD1695 /* DColor.swift in Sources */,
 				540FC9FD2C62A10D005CFF4E /* Resource.swift in Sources */,
+				541FCBD82C6B827100DD1695 /* NetworkUser.swift in Sources */,
 				545BBC682C616C8200B8FB80 /* Action.swift in Sources */,
 				545BBC732C623DC100B8FB80 /* Card.swift in Sources */,
 				545BBC6C2C616DA800B8FB80 /* Components.swift in Sources */,
@@ -321,6 +329,7 @@
 				545BBC662C616B7F00B8FB80 /* GameBoard.swift in Sources */,
 				545BBC6E2C6170BB00B8FB80 /* Player.swift in Sources */,
 				540FCA032C62D200005CFF4E /* YardTile.swift in Sources */,
+				541FCBDC2C6B9B8900DD1695 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

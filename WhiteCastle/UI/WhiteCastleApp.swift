@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WhiteCastleApp: App {
+    var user = NetworkUser()
+    
     var body: some Scene {
         WindowGroup {
-            PlayView()
+            LoginView(user: user)
         }
     }
 }

@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct PlayView: View {
-    var gameBoard = GameBoard()
-
+    var game: Game
+    
     var body: some View {
-        var player = gameBoard.players[0]
         VStack {
-            ResourceView(player: player)
-            DiceView(gameBoard: gameBoard)
+            ResourceView(player: game.getPlayer())
+            DiceView(gameBoard: game.board)
                 .frame(height: UIScreen.main.bounds.width/7)
             
             ScrollView() {
@@ -27,5 +26,6 @@ struct PlayView: View {
 }
 
 #Preview {
-    PlayView()
+    Text("not implemented")
+    //PlayView()
 }

@@ -5,7 +5,7 @@
 //  Created by Ich on 06.08.24.
 //
 
-enum CardType: Codable {
+enum CardType {
     case startAction
     case startResource
     case steward

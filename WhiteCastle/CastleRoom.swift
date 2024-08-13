@@ -10,7 +10,7 @@ enum Level: Codable {
     case second
 }
 
-class CastleRoom: Codable {
+class CastleRoom {
     var card: Card
     var level: Level
     
