@@ -60,7 +60,15 @@ class NetworkUser: Codable {
     }
     
     func newGame(_ game: Game) throws {
-        try print(JSONEncoder().encode(game).base64EncodedString())
+        //try JSONEncoder().encode(game)
+        
+
+        let rawData: Action = GainAction(.food, 2)
+        if let jsonData = try? JSONEncoder().encode(rawData),
+           let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+        }
+
     }
     
 }

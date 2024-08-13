@@ -107,6 +107,9 @@ struct GameBoard: Codable {
         // random src (p+1) add sac below each
         // in opposite order: choose one pair
         // decree card
-        players = [Player(startResourceCard: comps.startResourceCards[0], startActionCard: comps.startActionCards[0])]
+        players = [Player(startResourceCard: comps.startResourceCards[0], startActionCard: comps.startActionCards[0]),
+                   Player(startResourceCard: comps.startResourceCards[1], startActionCard: comps.startActionCards[1]),
+                   Player(startResourceCard: comps.startResourceCards[2], startActionCard: comps.startActionCards[2]),
+                   Player(startResourceCard: comps.startResourceCards[3], startActionCard: comps.startActionCards[3])]
     }
 }

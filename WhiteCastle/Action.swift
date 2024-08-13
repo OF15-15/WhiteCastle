@@ -5,8 +5,6 @@
 //  Created by Ich on 05.08.24.
 //
 
-import Foundation
-
 class Action: Codable {
     func run(_ player: Player, _ gameBoard: GameBoard) {
         
@@ -44,6 +42,11 @@ class PlayerBoardAction: Action {
         super.init()
     }
     
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(color, forKey: .color)
+    }
+    
     override func run(_ player: Player, _ gameBoard: GameBoard) {
         switch self.color {
         case .red:
@@ -57,7 +60,7 @@ class PlayerBoardAction: Action {
                 case 5:
                     player.gainSeals(1)
                 default:
-                    raise(43)
+                    print("foo")
                 }
             }
             //TBD: player.actionCard.black.run()
@@ -72,7 +75,7 @@ class PlayerBoardAction: Action {
                 case 5:
                     player.gainCoins(2)
                 default:
-                    raise(43)
+                    print("foo")
                 }
             }
             //TBD: player.actionCard.black.run()
@@ -88,12 +91,12 @@ class PlayerBoardAction: Action {
                 case 5:
                     player.lantern.run(player, gameBoard)
                 default:
-                    raise(43)
+                    print("error 209384")
                 }
             }
             //TBD: player.actionCard.black.run()
         case .all:
-            raise(42)
+            print("error 32904")
         }
     }
 }
@@ -126,6 +129,12 @@ class GainAction: Action {
         resource = try values.decode(Resource.self, forKey: .resource)
         amount = try values.decode(Int.self, forKey: .amount)
         super.init()
+    }
+    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(resource, forKey: .resource)
+        try container.encode(amount, forKey: .amount)
     }
     
     override func run(_ player: Player, _ gameBoard: GameBoard) {
@@ -169,9 +178,14 @@ class TwoAction: Action {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         firstAction = try container.decode(Action.self, forKey: .firstAction)
         secondAction = try container.decode(Action.self, forKey: .secondAction)
-        super.init() // Assuming Action has a default initializer
+        super.init()
     }
     
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(firstAction, forKey: .firstAction)
+        try container.encode(secondAction, forKey: .secondAction)
+    }
 }
 
 class PayAction: Action {
@@ -201,20 +215,25 @@ class PayAction: Action {
     }
     
     enum CodingKeys: String, CodingKey {
-            case amount
-            case resource
-            case action
-        }
-        
+        case amount
+        case resource
+        case action
+    }
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.amount = try container.decode(Int.self, forKey: .amount)
         self.resource = try container.decode(Resource.self, forKey: .resource)
-        self.action = try container.decode(Action.self, forKey: .action)  // Custom decoding logic required here
+        self.action = try container.decode(Action.self, forKey: .action)
         super.init()
     }
     
-    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(amount, forKey: .amount)
+        try container.encode(resource, forKey: .resource)
+        try container.encode(action, forKey: .action)
+    }
 }
 
 class DiceAction: PayAction {
@@ -226,25 +245,28 @@ class DiceAction: PayAction {
     }
     
     func run(_ player: Player, _ gameBoard: GameBoard, dice: Dice) {
-        amount = actionValue-dice.value
+        amount = actionValue - dice.value
         super.run(player, gameBoard)
     }
     
     func possible(_ player: Player, dice: Dice) -> Bool {
-        amount = actionValue-dice.value
+        amount = actionValue - dice.value
         return super.possible(player)
     }
     
     enum CodingKeys: String, CodingKey {
         case actionValue
-        case action
-        case amount  // Including amount as it's being modified in DiceAction
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.actionValue = try container.decode(Int.self, forKey: .actionValue)
-        let amount = try container.decode(Int.self, forKey: .amount)
-        super.init(amount: amount, resource: .coins, action: try container.decode(Action.self, forKey: .action))
+        try super.init(from: decoder)
+    }
+    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(actionValue, forKey: .actionValue)
+        try super.encode(to: encoder)
     }
 }

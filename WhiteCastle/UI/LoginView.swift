@@ -11,7 +11,7 @@ struct LoginView: View {
     @State var username: String = "foo"
     @State var password: String = "bar"
     @State var info: String = ""
-    @State var loginVisible: Bool = true
+    @State var loginVisible: Bool = false //true
     var user: NetworkUser
     
     var body: some View {
